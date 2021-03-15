@@ -1,0 +1,711 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf8">
+  <title>Quiz</title>
+</head>
+<body>
+<div style='position: relative;'> 
+
+<h2>Im 'Elaine' Elektroschock Experiment sind die Leute hilfsbereit, ausser wenn sie sich nicht mit Elaine identifizieren und eine Fluchtmöglichkeit haben. Dies ist vereinbar mit der Empathie-Altruismus Hypothese. 
+</h2> 
+
+    <div id = 'block_q1a1'style = 'padding: 10px;'>
+    <label for ='option_q1a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q1a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q1a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q1a2'style = 'padding: 10px;'>
+    <label for ='option_q1a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q1a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q1a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer1()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Das Modell des Abbaus negativer Stimmung besagt, dass Hilfeverhalten eigentlich egoistisch ist. 
+</h2> 
+
+    <div id = 'block_q2a1'style = 'padding: 10px;'>
+    <label for ='option_q2a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q2a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q2a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q2a2'style = 'padding: 10px;'>
+    <label for ='option_q2a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q2a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q2a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer2()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Nach dem Modell des Abbaus negativer Stimmung ist die Quelle der negativen Stimmung selbstbezogen, und nicht etwa 'Mitleid'.
+</h2> 
+
+    <div id = 'block_q3a1'style = 'padding: 10px;'>
+    <label for ='option_q3a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q3a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q3a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q3a2'style = 'padding: 10px;'>
+    <label for ='option_q3a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q3a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q3a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer3()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Dovidio's Experiment ergab folgenden Befund: Leute, die sich zuerst aktiv in ein Problem einer Studentin hineinversetzen mussten (negative Stimmung), und nachher die Möglichkeit hatten, der Studentin bei einem ANDEREN Problem zu helfen (geringe Empathie für neues Problem), taten dies kaum. Dies spricht eher für:
+</h2> 
+
+    <div id = 'block_q4a1'style = 'padding: 10px;'>
+    <label for ='option_q4a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q4a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Empathie-Altruismus-Hypothese
+</label>
+    <span id='result_q4a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q4a2'style = 'padding: 10px;'>
+    <label for ='option_q4a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q4a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Modell des Abbaus negativer Stimmung
+</label>
+    <span id='result_q4a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer4()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Die Wahrscheinlichkeit, dass schlussendlich irgendjemand hilft, ist aufgrund des Bystander Effects ______, wenn die Anzahl Anwesender grösser ist. 
+</h2> 
+
+    <div id = 'block_q5a1'style = 'padding: 10px;'>
+    <label for ='option_q5a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q5a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    etwa gleich
+</label>
+    <span id='result_q5a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q5a2'style = 'padding: 10px;'>
+    <label for ='option_q5a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q5a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    grösser
+</label>
+    <span id='result_q5a2'> </span>
+    </div> 
+
+    
+    <div id = 'block_q5a3'style = 'padding: 10px;'>
+    <label for ='option_q5a3' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q5a3' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    kleiner
+</label>
+    <span id='result_q5a3'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer5()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Das 'Arousal: Cost-Reward' Modell nimmt an, dass Zuschauende einer Notsituation vermeidungsmotiviert handeln.
+</h2> 
+
+    <div id = 'block_q6a1'style = 'padding: 10px;'>
+    <label for ='option_q6a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q6a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q6a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q6a2'style = 'padding: 10px;'>
+    <label for ='option_q6a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q6a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q6a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer6()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>________ is caring but immature and irrational (like the brainless scarecrow in The Wizard of Oz). It is what causes one to cry at the end of Charlotte’s Web, desperately hoping (despite having read the novel three times before) that this time the eponymous spider will not have to die." (Rahmenmodell von Loewenstein und Small)
+</h2> 
+
+    <div id = 'block_q7a1'style = 'padding: 10px;'>
+    <label for ='option_q7a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q7a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    deliberation
+</label>
+    <span id='result_q7a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q7a2'style = 'padding: 10px;'>
+    <label for ='option_q7a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q7a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    sympathy
+</label>
+    <span id='result_q7a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer7()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>The other process, ________, is rational but uncaring (like the heartless tin man)." (Rahmenmodell von Loewenstein und Small)
+</h2> 
+
+    <div id = 'block_q8a1'style = 'padding: 10px;'>
+    <label for ='option_q8a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q8a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    deliberation
+</label>
+    <span id='result_q8a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q8a2'style = 'padding: 10px;'>
+    <label for ='option_q8a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q8a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    sympathy
+</label>
+    <span id='result_q8a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer8()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Victims who share our own affective state, who are geographically or socially proximate, who are similar to us or are presented to us in a vivid fashion are, logically, no more deserving of aid. But they are far more likely to elicit ________ responses.
+</h2> 
+
+    <div id = 'block_q9a1'style = 'padding: 10px;'>
+    <label for ='option_q9a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q9a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    deliberate
+</label>
+    <span id='result_q9a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q9a2'style = 'padding: 10px;'>
+    <label for ='option_q9a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q9a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    sympathetic
+</label>
+    <span id='result_q9a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer9()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Der Unmittelbarkeits-Verzerrung der Hilfsbereitschaft ist analog zum Recency Effekt der Gedächtnispsychologie.
+</h2> 
+
+    <div id = 'block_q10a1'style = 'padding: 10px;'>
+    <label for ='option_q10a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q10a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q10a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q10a2'style = 'padding: 10px;'>
+    <label for ='option_q10a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q10a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q10a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer10()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Wenn man Versuchspersonen warnt, dass psychologische Effekte im Spiel sein könnten, ________ sich die Unmittelbarkeitsverzerrung.
+</h2> 
+
+    <div id = 'block_q11a1'style = 'padding: 10px;'>
+    <label for ='option_q11a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q11a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    vergrösserte
+</label>
+    <span id='result_q11a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q11a2'style = 'padding: 10px;'>
+    <label for ='option_q11a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q11a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    verringerte 
+</label>
+    <span id='result_q11a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer11()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Wird die eigene soziale Identität salient gemacht, ________ sich die Hilfsbereitschaft gegenüber Fremdgruppenmitgliedern ________.
+</h2> 
+
+    <div id = 'block_q12a1'style = 'padding: 10px;'>
+    <label for ='option_q12a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q12a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    sinkt ... ab
+</label>
+    <span id='result_q12a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q12a2'style = 'padding: 10px;'>
+    <label for ='option_q12a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q12a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    bleibt ... etwa gleich
+</label>
+    <span id='result_q12a2'> </span>
+    </div> 
+
+    
+    <div id = 'block_q12a3'style = 'padding: 10px;'>
+    <label for ='option_q12a3' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q12a3' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    steigt ... an
+</label>
+    <span id='result_q12a3'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer12()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Laut dem Modell der gemeinsamen Eigengruppenidentität kann man die Solidarität zwischen Iren und Mexikanern erhöhen, indem man die katholische Kirche salient macht (angenommen sie seien Katholiken).
+</h2> 
+
+    <div id = 'block_q13a1'style = 'padding: 10px;'>
+    <label for ='option_q13a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q13a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch 
+</label>
+    <span id='result_q13a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q13a2'style = 'padding: 10px;'>
+    <label for ='option_q13a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q13a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q13a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer13()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Wie viele Cousins müsste ich retten, damit es sich nach Hamilton's Rule / Theorie der Gesamtfitness / kin selection lohnen würde, mein eigenes Leben zu opfern? (Hinweis: Der Verwandtschaftsgrad von Cousins ist 0,25)
+</h2> 
+
+    <div id = 'block_q14a1'style = 'padding: 10px;'>
+    <label for ='option_q14a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q14a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Gar nie, weil es aus Sicht der Weitergabe der Gene nie adaptiv ist, sein eigenes Leben zu opfern.
+</label>
+    <span id='result_q14a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q14a2'style = 'padding: 10px;'>
+    <label for ='option_q14a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q14a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Mehr als 4
+</label>
+    <span id='result_q14a2'> </span>
+    </div> 
+
+    
+    <div id = 'block_q14a3'style = 'padding: 10px;'>
+    <label for ='option_q14a3' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q14a3' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Mehr als einen
+</label>
+    <span id='result_q14a3'> </span>
+    </div> 
+
+    
+    <div id = 'block_q14a4'style = 'padding: 10px;'>
+    <label for ='option_q14a4' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q14a4' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Mehr als 2
+</label>
+    <span id='result_q14a4'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer14()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Wenn ich einem Fremden helfe, auch wenn ich ihn wahrscheinlich nie wieder sehen werde, so ist das ein Beispiel von reziprokem Altruismus.
+</h2> 
+
+    <div id = 'block_q15a1'style = 'padding: 10px;'>
+    <label for ='option_q15a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q15a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q15a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q15a2'style = 'padding: 10px;'>
+    <label for ='option_q15a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q15a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q15a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer15()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>In einem Gefangenendilemma bin ich immer besser dran, wenn ich mich unkooperativ verhalte, unabhängig von der Entscheidung des Gegenübers.
+</h2> 
+
+    <div id = 'block_q16a1'style = 'padding: 10px;'>
+    <label for ='option_q16a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q16a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q16a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q16a2'style = 'padding: 10px;'>
+    <label for ='option_q16a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q16a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q16a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer16()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Stark reziprok agierende Spieler in einem Public Goods Game bestrafen Egoisten nur dann, wenn es sie nichts kostet, die Egoisten zu bestrafen. 
+</h2> 
+
+    <div id = 'block_q17a1'style = 'padding: 10px;'>
+    <label for ='option_q17a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q17a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q17a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q17a2'style = 'padding: 10px;'>
+    <label for ='option_q17a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q17a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q17a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer17()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+
+  <hr>
+</div>
+<script>
+function displayAnswer1() { 
+
+        if (document.getElementById('option_q1a1').checked) {
+          document.getElementById('block_q1a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q1a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q1a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q1a2').checked) {
+          document.getElementById('block_q1a2').style.background = '#FF0000'
+          document.getElementById('result_q1a2').style.color = '#FF0000'
+          document.getElementById('result_q1a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer2() { 
+
+        if (document.getElementById('option_q2a1').checked) {
+          document.getElementById('block_q2a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q2a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q2a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q2a2').checked) {
+          document.getElementById('block_q2a2').style.background = '#FF0000'
+          document.getElementById('result_q2a2').style.color = '#FF0000'
+          document.getElementById('result_q2a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer3() { 
+
+        if (document.getElementById('option_q3a1').checked) {
+          document.getElementById('block_q3a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q3a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q3a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q3a2').checked) {
+          document.getElementById('block_q3a2').style.background = '#FF0000'
+          document.getElementById('result_q3a2').style.color = '#FF0000'
+          document.getElementById('result_q3a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer4() { 
+
+        if (document.getElementById('option_q4a1').checked) {
+          document.getElementById('block_q4a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q4a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q4a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q4a2').checked) {
+          document.getElementById('block_q4a2').style.background = '#FF0000'
+          document.getElementById('result_q4a2').style.color = '#FF0000'
+          document.getElementById('result_q4a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer5() { 
+
+        if (document.getElementById('option_q5a1').checked) {
+          document.getElementById('block_q5a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q5a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q5a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q5a2').checked) {
+          document.getElementById('block_q5a2').style.background = '#FF0000'
+          document.getElementById('result_q5a2').style.color = '#FF0000'
+          document.getElementById('result_q5a2').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q5a3').checked) {
+          document.getElementById('block_q5a3').style.background = '#FF0000'
+          document.getElementById('result_q5a3').style.color = '#FF0000'
+          document.getElementById('result_q5a3').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer6() { 
+
+        if (document.getElementById('option_q6a1').checked) {
+          document.getElementById('block_q6a1').style.background = '#FF0000'
+          document.getElementById('result_q6a1').style.color = '#FF0000'
+          document.getElementById('result_q6a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q6a2').checked) {
+          document.getElementById('block_q6a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q6a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q6a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer7() { 
+
+        if (document.getElementById('option_q7a1').checked) {
+          document.getElementById('block_q7a1').style.background = '#FF0000'
+          document.getElementById('result_q7a1').style.color = '#FF0000'
+          document.getElementById('result_q7a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q7a2').checked) {
+          document.getElementById('block_q7a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q7a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q7a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer8() { 
+
+        if (document.getElementById('option_q8a1').checked) {
+          document.getElementById('block_q8a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q8a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q8a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q8a2').checked) {
+          document.getElementById('block_q8a2').style.background = '#FF0000'
+          document.getElementById('result_q8a2').style.color = '#FF0000'
+          document.getElementById('result_q8a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer9() { 
+
+        if (document.getElementById('option_q9a1').checked) {
+          document.getElementById('block_q9a1').style.background = '#FF0000'
+          document.getElementById('result_q9a1').style.color = '#FF0000'
+          document.getElementById('result_q9a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q9a2').checked) {
+          document.getElementById('block_q9a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q9a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q9a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer10() { 
+
+        if (document.getElementById('option_q10a1').checked) {
+          document.getElementById('block_q10a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q10a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q10a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q10a2').checked) {
+          document.getElementById('block_q10a2').style.background = '#FF0000'
+          document.getElementById('result_q10a2').style.color = '#FF0000'
+          document.getElementById('result_q10a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer11() { 
+
+        if (document.getElementById('option_q11a1').checked) {
+          document.getElementById('block_q11a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q11a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q11a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q11a2').checked) {
+          document.getElementById('block_q11a2').style.background = '#FF0000'
+          document.getElementById('result_q11a2').style.color = '#FF0000'
+          document.getElementById('result_q11a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer12() { 
+
+        if (document.getElementById('option_q12a1').checked) {
+          document.getElementById('block_q12a1').style.background = '#FF0000'
+          document.getElementById('result_q12a1').style.color = '#FF0000'
+          document.getElementById('result_q12a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q12a2').checked) {
+          document.getElementById('block_q12a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q12a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q12a2').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q12a3').checked) {
+          document.getElementById('block_q12a3').style.background = '#FF0000'
+          document.getElementById('result_q12a3').style.color = '#FF0000'
+          document.getElementById('result_q12a3').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer13() { 
+
+        if (document.getElementById('option_q13a1').checked) {
+          document.getElementById('block_q13a1').style.background = '#FF0000'
+          document.getElementById('result_q13a1').style.color = '#FF0000'
+          document.getElementById('result_q13a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q13a2').checked) {
+          document.getElementById('block_q13a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q13a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q13a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer14() { 
+
+        if (document.getElementById('option_q14a1').checked) {
+          document.getElementById('block_q14a1').style.background = '#FF0000'
+          document.getElementById('result_q14a1').style.color = '#FF0000'
+          document.getElementById('result_q14a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q14a2').checked) {
+          document.getElementById('block_q14a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q14a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q14a2').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q14a3').checked) {
+          document.getElementById('block_q14a3').style.background = '#FF0000'
+          document.getElementById('result_q14a3').style.color = '#FF0000'
+          document.getElementById('result_q14a3').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q14a4').checked) {
+          document.getElementById('block_q14a4').style.background = '#FF0000'
+          document.getElementById('result_q14a4').style.color = '#FF0000'
+          document.getElementById('result_q14a4').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer15() { 
+
+        if (document.getElementById('option_q15a1').checked) {
+          document.getElementById('block_q15a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q15a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q15a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q15a2').checked) {
+          document.getElementById('block_q15a2').style.background = '#FF0000'
+          document.getElementById('result_q15a2').style.color = '#FF0000'
+          document.getElementById('result_q15a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer16() { 
+
+        if (document.getElementById('option_q16a1').checked) {
+          document.getElementById('block_q16a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q16a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q16a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q16a2').checked) {
+          document.getElementById('block_q16a2').style.background = '#FF0000'
+          document.getElementById('result_q16a2').style.color = '#FF0000'
+          document.getElementById('result_q16a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer17() { 
+
+        if (document.getElementById('option_q17a1').checked) {
+          document.getElementById('block_q17a1').style.background = '#FF0000'
+          document.getElementById('result_q17a1').style.color = '#FF0000'
+          document.getElementById('result_q17a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q17a2').checked) {
+          document.getElementById('block_q17a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q17a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q17a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+
+</script>
+</body>
+</html>

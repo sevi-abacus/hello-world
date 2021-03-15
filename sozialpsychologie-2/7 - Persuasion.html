@@ -1,0 +1,684 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf8">
+  <title>Quiz</title>
+</head>
+<body>
+<div style='position: relative;'> 
+
+<h2>Starke Argumente wirken stärker bei tiefer persönlicher Relevanz.
+</h2> 
+
+    <div id = 'block_q1a1'style = 'padding: 10px;'>
+    <label for ='option_q1a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q1a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q1a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q1a2'style = 'padding: 10px;'>
+    <label for ='option_q1a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q1a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q1a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer1()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>McGuire's Informationsverarbeitungsmodell berücksichtigt neben der blossen Rezeption von Argumenten auch deren Qualität.
+</h2> 
+
+    <div id = 'block_q2a1'style = 'padding: 10px;'>
+    <label for ='option_q2a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q2a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q2a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q2a2'style = 'padding: 10px;'>
+    <label for ='option_q2a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q2a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q2a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer2()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Persuasionsprozesse, die NICHT auf themenrelevantem Denken beruhen (z.B. evaluative Konditionierung, heuristische Verarbeitung), können gut durch McGuire's Informationsverarbeitungsmodell erklärt werden.
+</h2> 
+
+    <div id = 'block_q3a1'style = 'padding: 10px;'>
+    <label for ='option_q3a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q3a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q3a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q3a2'style = 'padding: 10px;'>
+    <label for ='option_q3a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q3a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q3a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer3()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Das Modell der kognitiven Reaktionen nimmt an, dass eine Einstellungsänderung erzeugt wird durch zustimmende, selbst erzeugte Gedanken über eine Botschaft.   
+</h2> 
+
+    <div id = 'block_q4a1'style = 'padding: 10px;'>
+    <label for ='option_q4a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q4a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr 
+</label>
+    <span id='result_q4a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q4a2'style = 'padding: 10px;'>
+    <label for ='option_q4a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q4a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q4a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer4()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Schwache Argumente erhalten mehr Zustimmung wenn der Empfänger abgelenkt wird. 
+</h2> 
+
+    <div id = 'block_q5a1'style = 'padding: 10px;'>
+    <label for ='option_q5a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q5a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q5a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q5a2'style = 'padding: 10px;'>
+    <label for ='option_q5a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q5a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q5a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer5()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Das Modell der Elaborationswahrscheinlichkeit ist eine Zwei-Prozess-Theorie. 
+</h2> 
+
+    <div id = 'block_q6a1'style = 'padding: 10px;'>
+    <label for ='option_q6a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q6a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr 
+</label>
+    <span id='result_q6a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q6a2'style = 'padding: 10px;'>
+    <label for ='option_q6a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q6a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q6a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer6()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Das sorgfältige Abwägen der Argumente/Elaboration ist ein peripherer Prozess (im Modell der Elaborationswahrscheinlichkeit). 
+</h2> 
+
+    <div id = 'block_q7a1'style = 'padding: 10px;'>
+    <label for ='option_q7a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q7a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q7a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q7a2'style = 'padding: 10px;'>
+    <label for ='option_q7a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q7a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q7a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer7()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Eine Persuasion beruht entweder ganz auf peripheren oder ganz auf zentralen Prozessen. 
+</h2> 
+
+    <div id = 'block_q8a1'style = 'padding: 10px;'>
+    <label for ='option_q8a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q8a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q8a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q8a2'style = 'padding: 10px;'>
+    <label for ='option_q8a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q8a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q8a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer8()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Je STÄRKER elaboriert wird, desto WENIGER beeinflusst die Argumentqualität die Einstellung.
+</h2> 
+
+    <div id = 'block_q9a1'style = 'padding: 10px;'>
+    <label for ='option_q9a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q9a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q9a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q9a2'style = 'padding: 10px;'>
+    <label for ='option_q9a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q9a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q9a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer9()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Bei niedriger persönlicher Relevanz fällt die Elaboration tiefer aus.
+</h2> 
+
+    <div id = 'block_q10a1'style = 'padding: 10px;'>
+    <label for ='option_q10a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q10a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q10a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q10a2'style = 'padding: 10px;'>
+    <label for ='option_q10a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q10a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch 
+</label>
+    <span id='result_q10a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer10()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Bei niedriger Elaboration stimmt man Argumenten stärker zu, wenn sie von einem "Experten" kommen als von einem Laien, während bei hoher Elaboration die Informationsquelle (Experte vs. Laie) eine geringere Rolle spielt, weil man sich weniger auf heuritischer Hinweisreize verlässt.
+</h2> 
+
+    <div id = 'block_q11a1'style = 'padding: 10px;'>
+    <label for ='option_q11a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q11a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q11a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q11a2'style = 'padding: 10px;'>
+    <label for ='option_q11a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q11a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr 
+</label>
+    <span id='result_q11a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer11()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Wenn man keine Ahnung von einem Thema hat, stimmt man langen Botschaften eher zu, weil man die Länge der Botschaft als peripheral cue / heuritischer Hinweisreiz nutzt.
+</h2> 
+
+    <div id = 'block_q12a1'style = 'padding: 10px;'>
+    <label for ='option_q12a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q12a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q12a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q12a2'style = 'padding: 10px;'>
+    <label for ='option_q12a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q12a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q12a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer12()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Es gibt auch subliminale Werbung, die man bewusst wahrnimmt.
+</h2> 
+
+    <div id = 'block_q13a1'style = 'padding: 10px;'>
+    <label for ='option_q13a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q13a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q13a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q13a2'style = 'padding: 10px;'>
+    <label for ='option_q13a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q13a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q13a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer13()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Bei Produkten, über die man weder detailliert nachdenkt, noch Gefühle in einem auslösen können, (zB. Rasierer) wirken Empfehlungen von berühmten Personen gut.
+</h2> 
+
+    <div id = 'block_q14a1'style = 'padding: 10px;'>
+    <label for ='option_q14a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q14a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q14a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q14a2'style = 'padding: 10px;'>
+    <label for ='option_q14a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q14a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q14a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer14()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Wenn man betrunken und "plötzlich" mit einer wildfremden Person am Küssen ist, und sich dann denkt, "Ich finde diese Person passt gut zu mir, sonst würde ich sie ja nicht küssen", so ist das ein Beispiel der Selbstwahrnehmungstheorie. 
+</h2> 
+
+    <div id = 'block_q15a1'style = 'padding: 10px;'>
+    <label for ='option_q15a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q15a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q15a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q15a2'style = 'padding: 10px;'>
+    <label for ='option_q15a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q15a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch 
+</label>
+    <span id='result_q15a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer15()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Wenn man aber eine Person küsst, weil man am Flaschendrehen spielen ist, so wird man laut Abwertungsprinzip NICHT denken "Hmm diese Person ist echt mein Soulmate, sonst würde ich sie ja nicht küssen!". 
+</h2> 
+
+    <div id = 'block_q16a1'style = 'padding: 10px;'>
+    <label for ='option_q16a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q16a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q16a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q16a2'style = 'padding: 10px;'>
+    <label for ='option_q16a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q16a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr 
+</label>
+    <span id='result_q16a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer16()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Die resultierende Einstellungsänderung bei Forced-Compliance (dass Versuchspersonen ein langweiliges Experiment anschliessend besser bewerten, wenn man ihnen eine nicht zu grosse Geldsumme dafür gibt, es einer anderen Versuchsperson weiterzuempfehlen), kann NUR durch die kognitive Dissonanztheorie erklärt werden, NICHT durch die Selbstwahrnehmungstheorie.
+</h2> 
+
+    <div id = 'block_q17a1'style = 'padding: 10px;'>
+    <label for ='option_q17a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q17a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q17a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q17a2'style = 'padding: 10px;'>
+    <label for ='option_q17a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q17a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q17a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer17()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Wenn ein kleines Mädchen wütend wird, weil die Regierung es ihr verbietet, ein 'Winnie the Pooh' Kleidchen zu tragen, kann das unter anderem durch die Reaktanztheorie erklärt werden. 
+</h2> 
+
+    <div id = 'block_q18a1'style = 'padding: 10px;'>
+    <label for ='option_q18a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q18a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    wahr
+</label>
+    <span id='result_q18a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q18a2'style = 'padding: 10px;'>
+    <label for ='option_q18a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q18a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    falsch
+</label>
+    <span id='result_q18a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer18()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+
+  <hr>
+</div>
+<script>
+function displayAnswer1() { 
+
+        if (document.getElementById('option_q1a1').checked) {
+          document.getElementById('block_q1a1').style.background = '#FF0000'
+          document.getElementById('result_q1a1').style.color = '#FF0000'
+          document.getElementById('result_q1a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q1a2').checked) {
+          document.getElementById('block_q1a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q1a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q1a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer2() { 
+
+        if (document.getElementById('option_q2a1').checked) {
+          document.getElementById('block_q2a1').style.background = '#FF0000'
+          document.getElementById('result_q2a1').style.color = '#FF0000'
+          document.getElementById('result_q2a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q2a2').checked) {
+          document.getElementById('block_q2a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q2a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q2a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer3() { 
+
+        if (document.getElementById('option_q3a1').checked) {
+          document.getElementById('block_q3a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q3a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q3a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q3a2').checked) {
+          document.getElementById('block_q3a2').style.background = '#FF0000'
+          document.getElementById('result_q3a2').style.color = '#FF0000'
+          document.getElementById('result_q3a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer4() { 
+
+        if (document.getElementById('option_q4a1').checked) {
+          document.getElementById('block_q4a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q4a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q4a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q4a2').checked) {
+          document.getElementById('block_q4a2').style.background = '#FF0000'
+          document.getElementById('result_q4a2').style.color = '#FF0000'
+          document.getElementById('result_q4a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer5() { 
+
+        if (document.getElementById('option_q5a1').checked) {
+          document.getElementById('block_q5a1').style.background = '#FF0000'
+          document.getElementById('result_q5a1').style.color = '#FF0000'
+          document.getElementById('result_q5a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q5a2').checked) {
+          document.getElementById('block_q5a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q5a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q5a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer6() { 
+
+        if (document.getElementById('option_q6a1').checked) {
+          document.getElementById('block_q6a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q6a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q6a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q6a2').checked) {
+          document.getElementById('block_q6a2').style.background = '#FF0000'
+          document.getElementById('result_q6a2').style.color = '#FF0000'
+          document.getElementById('result_q6a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer7() { 
+
+        if (document.getElementById('option_q7a1').checked) {
+          document.getElementById('block_q7a1').style.background = '#FF0000'
+          document.getElementById('result_q7a1').style.color = '#FF0000'
+          document.getElementById('result_q7a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q7a2').checked) {
+          document.getElementById('block_q7a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q7a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q7a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer8() { 
+
+        if (document.getElementById('option_q8a1').checked) {
+          document.getElementById('block_q8a1').style.background = '#FF0000'
+          document.getElementById('result_q8a1').style.color = '#FF0000'
+          document.getElementById('result_q8a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q8a2').checked) {
+          document.getElementById('block_q8a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q8a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q8a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer9() { 
+
+        if (document.getElementById('option_q9a1').checked) {
+          document.getElementById('block_q9a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q9a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q9a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q9a2').checked) {
+          document.getElementById('block_q9a2').style.background = '#FF0000'
+          document.getElementById('result_q9a2').style.color = '#FF0000'
+          document.getElementById('result_q9a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer10() { 
+
+        if (document.getElementById('option_q10a1').checked) {
+          document.getElementById('block_q10a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q10a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q10a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q10a2').checked) {
+          document.getElementById('block_q10a2').style.background = '#FF0000'
+          document.getElementById('result_q10a2').style.color = '#FF0000'
+          document.getElementById('result_q10a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer11() { 
+
+        if (document.getElementById('option_q11a1').checked) {
+          document.getElementById('block_q11a1').style.background = '#FF0000'
+          document.getElementById('result_q11a1').style.color = '#FF0000'
+          document.getElementById('result_q11a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q11a2').checked) {
+          document.getElementById('block_q11a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q11a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q11a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer12() { 
+
+        if (document.getElementById('option_q12a1').checked) {
+          document.getElementById('block_q12a1').style.background = '#FF0000'
+          document.getElementById('result_q12a1').style.color = '#FF0000'
+          document.getElementById('result_q12a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q12a2').checked) {
+          document.getElementById('block_q12a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q12a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q12a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer13() { 
+
+        if (document.getElementById('option_q13a1').checked) {
+          document.getElementById('block_q13a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q13a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q13a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q13a2').checked) {
+          document.getElementById('block_q13a2').style.background = '#FF0000'
+          document.getElementById('result_q13a2').style.color = '#FF0000'
+          document.getElementById('result_q13a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer14() { 
+
+        if (document.getElementById('option_q14a1').checked) {
+          document.getElementById('block_q14a1').style.background = '#FF0000'
+          document.getElementById('result_q14a1').style.color = '#FF0000'
+          document.getElementById('result_q14a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q14a2').checked) {
+          document.getElementById('block_q14a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q14a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q14a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer15() { 
+
+        if (document.getElementById('option_q15a1').checked) {
+          document.getElementById('block_q15a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q15a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q15a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q15a2').checked) {
+          document.getElementById('block_q15a2').style.background = '#FF0000'
+          document.getElementById('result_q15a2').style.color = '#FF0000'
+          document.getElementById('result_q15a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer16() { 
+
+        if (document.getElementById('option_q16a1').checked) {
+          document.getElementById('block_q16a1').style.background = '#FF0000'
+          document.getElementById('result_q16a1').style.color = '#FF0000'
+          document.getElementById('result_q16a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q16a2').checked) {
+          document.getElementById('block_q16a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q16a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q16a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer17() { 
+
+        if (document.getElementById('option_q17a1').checked) {
+          document.getElementById('block_q17a1').style.background = '#FF0000'
+          document.getElementById('result_q17a1').style.color = '#FF0000'
+          document.getElementById('result_q17a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q17a2').checked) {
+          document.getElementById('block_q17a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q17a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q17a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer18() { 
+
+        if (document.getElementById('option_q18a1').checked) {
+          document.getElementById('block_q18a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q18a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q18a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q18a2').checked) {
+          document.getElementById('block_q18a2').style.background = '#FF0000'
+          document.getElementById('result_q18a2').style.color = '#FF0000'
+          document.getElementById('result_q18a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+
+</script>
+</body>
+</html>
