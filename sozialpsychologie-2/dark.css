@@ -2,38 +2,44 @@ body {
   background-color: black;
 }
 
-body, h1, h2 h3, h4, h5, h6 {
+body, h1, h2, h3, h4, h5, h6, p {
   font-family: "Helvetica", sans-serif
   color: white;
   margin-left: 20px;
   text-shadow: 1px 1px 1px white;
 }
 
-p {
+
+/* unvisited link */
+a:link {
   font-family: "Helvetica", sans-serif
   color: pink;
   margin-left: 20px;
   text-shadow: 1px 1px 1px white;
-}
-
-/* unvisited link */
-a:link {
-  color: pink;
 }
 
 /* visited link */
 a:visited {
   color: red;
+  font-family: "Helvetica", sans-serif
+  margin-left: 20px;
+  text-shadow: 1px 1px 1px white;
 }
 
 /* mouse over link */
 a:hover {
   color: white;
+  font-family: "Helvetica", sans-serif
+  margin-left: 20px;
+  text-shadow: 1px 1px 1px white;
 }
 
 /* selected link */
 a:active {
   color: lightblue;
+  font-family: "Helvetica", sans-serif
+  margin-left: 20px;
+  text-shadow: 1px 1px 1px white;
 }
 
 <!--
