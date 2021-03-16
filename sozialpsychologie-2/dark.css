@@ -6,22 +6,24 @@ body, h1, h2 h3, h4, h5, h6 {
   font-family: "Helvetica", sans-serif
   color: white;
   margin-left: 20px;
+  text-shadow: 1px 1px 1px white;
 }
 
 p {
   font-family: "Helvetica", sans-serif
   color: pink;
   margin-left: 20px;
+  text-shadow: 1px 1px 1px white;
 }
 
 /* unvisited link */
 a:link {
-  color: yellow;
+  color: pink;
 }
 
 /* visited link */
 a:visited {
-  color: orange;
+  color: red;
 }
 
 /* mouse over link */
@@ -34,7 +36,9 @@ a:active {
   color: lightblue;
 }
 
-//<style>
-//body,h1,h2,h3,h4,h5, h6, p {font-family: "Helvetica", sans-serif}
-//body {font-size:10vx;}
-//</style>
+<!--
+<style>
+body,h1,h2,h3,h4,h5, h6, p {font-family: "Helvetica", sans-serif}
+body {font-size:10vx;}
+</style>
+-->
