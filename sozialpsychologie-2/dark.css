@@ -4,41 +4,41 @@ body {
 
 body, h1, h2, h3, h4, h5, h6, p {
   font-family: "Helvetica", sans-serif;
-  color: white;
+  color: blue;
   margin-left: 20px;
-  text-shadow: blue 0.1vh 0.1vh;
+  text-shadow: white 0.3vh 0.3vh;
 }
 
 
 /* unvisited link */
 a:link {
   font-family: "Helvetica", sans-serif;
-  color: white;
+  color: orange;
   margin-left: 20px;
-  text-shadow: yellow 0.1vh 0.1vh;
+  text-shadow: white 0.3vh 0.3vh;
 }
 
 /* visited link */
 a:visited {
-  color: white;
+  color: brown;
   font-family: "Helvetica", sans-serif;
   margin-left: 20px;
-  text-shadow: orange 0.1vh 0.1vh;
+  text-shadow: white 0.3vh 0.3vh;
 }
 
 /* mouse over link */
 a:hover {
-  color: white;
+  color: yellow;
   font-family: "Helvetica", sans-serif;
   margin-left: 20px;
-  text-shadow: blue 0.1vh 0.1vh;
+  text-shadow: white 0.3vh 0.3vh;
 }
 
 /* selected link */
 a:active {
-  color: white;
+  color: blue;
   font-family: "Helvetica", sans-serif;
   margin-left: 20px;
-  text-shadow: green 0.1vh 0.1vh;
+  text-shadow: white 0.3vh 0.3vh;
 }
 
