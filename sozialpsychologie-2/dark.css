@@ -1,11 +1,12 @@
 body {
-  background-color: black;
+  background-color: white;
 }
 
 body, h1, h2, h3, h4, h5, h6, p {
   font-family: "Helvetica", sans-serif;
+}
+<!--
   color: blue;
-  margin-left: 20px;
   text-shadow: white 0.3vh 0.3vh;
   size: 
 }
@@ -42,4 +43,5 @@ a:active {
   margin-left: 20px;
   text-shadow: white 0.15vh 0.15vh;
 }
+-->
 
