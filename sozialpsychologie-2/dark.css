@@ -1,0 +1,40 @@
+body {
+  background-color: black;
+}
+
+body, h1, h2 h3, h4, h5, h6 {
+  font-family: "Helvetica", sans-serif
+  color: white;
+  margin-left: 20px;
+}
+
+p {
+  font-family: "Helvetica", sans-serif
+  color: pink;
+  margin-left: 20px;
+}
+
+/* unvisited link */
+a:link {
+  color: yellow;
+}
+
+/* visited link */
+a:visited {
+  color: orange;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: lightblue;
+}
+
+//<style>
+//body,h1,h2,h3,h4,h5, h6, p {font-family: "Helvetica", sans-serif}
+//body {font-size:10vx;}
+//</style>
