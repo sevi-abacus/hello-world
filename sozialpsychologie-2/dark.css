@@ -6,23 +6,24 @@ body, h1, h2, h3, h4, h5, h6, p {
   font-family: "Helvetica", sans-serif;
   color: white;
   margin-left: 20px;
+  text-shadow: blue 0.1vh 0.1vh;
 }
 
 
 /* unvisited link */
 a:link {
   font-family: "Helvetica", sans-serif;
-  color: pink;
+  color: white;
   margin-left: 20px;
-  text-shadow: white 0.1vh 0.1vh;
+  text-shadow: yellow 0.1vh 0.1vh;
 }
 
 /* visited link */
 a:visited {
-  color: red;
+  color: white;
   font-family: "Helvetica", sans-serif;
   margin-left: 20px;
-  text-shadow: white 0.1vh 0.1vh;
+  text-shadow: orange 0.1vh 0.1vh;
 }
 
 /* mouse over link */
@@ -30,14 +31,14 @@ a:hover {
   color: white;
   font-family: "Helvetica", sans-serif;
   margin-left: 20px;
-  text-shadow: white 0.1vh 0.1vh;
+  text-shadow: blue 0.1vh 0.1vh;
 }
 
 /* selected link */
 a:active {
-  color: lightblue;
+  color: white;
   font-family: "Helvetica", sans-serif;
   margin-left: 20px;
-  text-shadow: white 0.1vh 0.1vh;
+  text-shadow: green 0.1vh 0.1vh;
 }
 
