@@ -23,6 +23,25 @@ p {
   display: inline
   }
 </style>
+  
+   <script>
+function displayResult1a() {
+  document.getElementById("1a").color = "rgb(0, 255, 0)";
+  document.getElementById("slash1").innerHTML = ""
+  document.getElementById("1b").innerHTML = ""
+}
+function displayResult1b() {
+ document.getElementById("1b").color = "rgb(255, 0, 0)"
+}
+function displayResult2a() {
+  document.getElementById("2a").color = "rgb(0, 255, 0)";
+  document.getElementById("slash2").innerHTML = ""
+  document.getElementById("2b").innerHTML = ""
+}
+function displayResult2b() {
+ document.getElementById("2b").color = "rgb(255, 0, 0)"
+}
+</script>
 
 <h1>How special relativity explains the Lorentz Force</h1>
   <p>The following video shows really nicely how special relativity explains magnetism:</p>
@@ -42,24 +61,7 @@ p {
   <p id="2b"  onclick="displayResult2()">pulled towards</p>
   <p> the wire. </p>
 
-  <script>
-function displayResult1a() {
-  document.getElementById("1a").color = "rgb(0, 255, 0)";
-  document.getElementById("slash1").innerHTML = ""
-  document.getElementById("1b").innerHTML = ""
-}
-function displayResult1b() {
- document.getElementById("1b").color = "rgb(255, 0, 0)"
-}
-function displayResult2a() {
-  document.getElementById("2a").color = "rgb(0, 255, 0)";
-  document.getElementById("slash2").innerHTML = ""
-  document.getElementById("2b").innerHTML = ""
-}
-function displayResult2b() {
- document.getElementById("2b").color = "rgb(255, 0, 0)"
-}
-</script>
+ 
 
    <br>
   <p>Now we can check our result with the conventional right hand rule. As electrons have a negative charge, the electric flow (index) points to the right. Because we are in front of the wire, the middle finger points to the top. The thumb and thus the resulting Lorentz force points away from the wire.</p>
