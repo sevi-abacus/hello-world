@@ -8,7 +8,7 @@
 <meta charset="utf8">
 
 <body>
-<div style='position: relative;'>
+<div style='position: relative;'></div>
 
 <style>
 
@@ -16,30 +16,40 @@
 img {
   width: 100%;
 }
-body,h1,h2,h3,h4,h5, h6, p {
+body,h1,h2,h3,h4,h5, h6, p, buttoon {
   font-family: "Helvetica", sans-serif
   }
 p {
   display: inline
   }
+
+buttoon {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 </style>
-  
+
    <script>
 function displayResult1a() {
-  document.getElementById("1a").color = "rgb(0, 255, 0)";
-  document.getElementById("slash1").innerHTML = ""
-  document.getElementById("1b").innerHTML = ""
+  document.getElementById("1a").style.color = "green";
+  document.getElementById("slash1").innerHTML = "";
+  document.getElementById("1b").innerHTML = "";
 }
 function displayResult1b() {
- document.getElementById("1b").color = "rgb(255, 0, 0)"
+ document.getElementById("1b").style.color = "red";
 }
 function displayResult2a() {
-  document.getElementById("2a").color = "rgb(0, 255, 0)";
-  document.getElementById("slash2").innerHTML = ""
-  document.getElementById("2b").innerHTML = ""
+  document.getElementById("2a").style.color = "green";
+  document.getElementById("slash2").innerHTML = "";
+  document.getElementById("2b").innerHTML = "";
 }
 function displayResult2b() {
- document.getElementById("2b").color = "rgb(255, 0, 0)"
+ document.getElementById("2b").style.color = "red";
 }
 </script>
 
@@ -48,24 +58,26 @@ function displayResult2b() {
   <br>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1TKSfAkWWN0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
-  <p>Now let's try and explain the Lorentz Force of a magnetic field on an electron with special relativity:
+    <p>Now let's try and explain the Lorentz Force of a magnetic field on an electron with special relativity: </p>
+  <br>
    <img src="lorentz.jpg" alt="right_hand_rules" width="100%">
+  <br>
     <p>Imagine a wire that has an electric flow and thus induces a magnetic field. Now we assume a electron in front of the wire, travelling in the opposite direction to the electrons in the wire.
       Because the velocity of the electron-in-front is is higher relative to the flowing electrons / stationary protons in the wire, the electrons get more length-contracted in the electron-in-front's perspective, and so do the the gaps between them.
       From the electrons perspective, the wire is now </p>
-  <p id="1a"  onclick="displayResult1a()"> negatively</p>
+  <buttoon id="1a"  onclick="displayResult1a()"> negatively</buttoon>
     <p id="slash1"> / </p>
-   <p id="1b  onclick="displayResult1b()">positively</p>
-  <p> charged, and it is
-  <p id="2a"  onclick="displayResult2()">pushed away</p>
+   <buttoon id="1b"  onclick="displayResult1b()">positively</buttoon>
+    <p> charged, and it is </p>
+  <buttoon id="2a"  onclick="displayResult2a()">pushed away by</buttoon>
   <p id="slash2"> / </p>
-  <p id="2b"  onclick="displayResult2()">pulled towards</p>
+  <buttoon id="2b"  onclick="displayResult2b()">pulled towards</buttoon>
   <p> the wire. </p>
 
- 
+
 
    <br>
   <p>Now we can check our result with the conventional right hand rule. As electrons have a negative charge, the electric flow (index) points to the right. Because we are in front of the wire, the middle finger points to the top. The thumb and thus the resulting Lorentz force points away from the wire.</p>
 
-</body>
+  </body>
 </html>
