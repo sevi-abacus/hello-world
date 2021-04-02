@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+img {
+  width: 100%;
+}
+body,h1,h2,h3,h4,h5, h6, p, input {
+  font-family: "Helvetica", sans-serif;
+  display: inline;
+  }
+</style>
+<script>
+function wawa() {
+  var a = document.getElementById('input_id1').value;
+  var b = document.getElementById('input_id2').value;
+  var c = document.getElementById('input_id3').value;
+
+  var solution1 = -(b + Math.sqrt(b**2 - 4*a*c)) / (2 * a);
+  var solution2 = -(b - Math.sqrt(b**2 - 4*a*c)) / (2 * a);
+
+  document.getElementById('alert').innerHTML = solution1 + " / " + solution2;
+}
+</script>
+
+<body>
+  <form>
+    <input type="text" id="input_id1" value="">
+    <p>x<sup>2</sup>  +  </p>
+    <input type="text" id="input_id2" value="">
+    <p>x  +  </p>
+    <input type="text" id="input_id3" value="">
+    <p> = 0 </p>
+    <input type="button" value="calculate" onclick="wawa()" />
+    <div id="alert"></div>
+  </form>
+</body>
+</html>
