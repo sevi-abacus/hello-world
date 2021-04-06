@@ -12,18 +12,64 @@
             font-family: "Helvetica", sans-serif, bold
         }
         body {
-    background-color: #333333;
+    background-color: #303030;
             height: 100%;
             width: 100%;
        }
     </style>
 </head>
-<body>
+<script>
+    const date_future = 1620914400000
+ function timer(){
+    var d = new Date();
+    var ms_now = d.getTime();
+        // get total seconds between the times
+    var delta = Math.abs(date_future - ms_now) / 1000;
+
+// calculate (and subtract) whole days
+var days = Math.floor(delta / 86400);
+delta -= days * 86400;
+
+// calculate (and subtract) whole hours
+var hours = Math.floor(delta / 3600) % 24;
+delta -= hours * 3600;
+
+// calculate (and subtract) whole minutes
+var minutes = Math.floor(delta / 60) % 60;
+delta -= minutes * 60;
+
+// what's left is seconds
+var seconds = Math.floor(delta)
+     seconds = seconds.toString();
+    while (seconds.length < 2) {
+        seconds = "0" + seconds;
+    }
+
+     document.getElementById('safeTimerDisplay').innerHTML =
+         days + "d " + hours + "h " + minutes + "m " + seconds + "s bis zum OPLympiade Trainingslager.";
+
+
+    if (delta % 2 < 1) {
+        document.getElementById('live').innerHTML =
+                "";
+    } else
+   document.getElementById('live').innerHTML =
+                "LIVE";
+
+}
+setInterval(timer, 25);
+</script>
+<body onload="timer()">
 <svg height="9vh" viewBox="0 0 30 10">
     <polygon fill=red stroke-width=0
              points="15,0 25,0 25,10 15,10" />
     <text x="3" y="9" fill="white" font-size="45%">Effi RF</text>
 </svg>
+<!--
+weisst du, wie man es rechts für quer und oben für hochkant macht?
+-->
+<h4 id="safeTimerDisplay" style="color:white; position:absolute; left:40vh; top:3vh"><pre><b>banana</b></pre></h4>
+<h4 id="live" style="color:red; position:absolute; left:32vh; top:3vh"><pre><b>banana</b></pre></h4>
 <br>
 
 <iframe src="https://drive.google.com/file/d/13YQ1bKYdQnsijMs0CcEJIbdisfz-7su1/preview?start=1"
@@ -31,6 +77,14 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 
