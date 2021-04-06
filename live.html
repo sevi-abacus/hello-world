@@ -19,7 +19,7 @@
     </style>
 </head>
 <script>
-    const date_future = 1620914400000 - 22 * 3600000
+    const date_future = 1620914400000 - 16 * 3600000
  function timer(){
     var d = new Date();
     var ms_now = d.getTime();
@@ -46,7 +46,7 @@ var seconds = Math.floor(delta)
     }
 
      document.getElementById('safeTimerDisplay').innerHTML =
-         days + "d " + hours + "h " + minutes + "m " + seconds + "s bis zum OP-lympiade Trainingslager.";
+         days + " Tage bis zum OPlympiade Trainingslager.";
 
 
     if (delta % 2 < 1) {
