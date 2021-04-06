@@ -19,7 +19,7 @@
     </style>
 </head>
 <script>
-    const date_future = 1620914400000 + 3 * 3600000
+    const date_future = 1620914400000
  function timer(){
     var d = new Date();
     var ms_now = d.getTime();
@@ -46,7 +46,7 @@ var seconds = Math.floor(delta)
     }
 
      document.getElementById('safeTimerDisplay').innerHTML =
-         days + "d " + hours + "h " + minutes + "m " + seconds + "s bis zum OPlympiade Trainingslager.";
+         days + "d " + hours + "h " + minutes + "m " + seconds + "s bis zum OP-lympiade Trainingslager.";
 
 
     if (delta % 2 < 1) {
@@ -60,7 +60,7 @@ var seconds = Math.floor(delta)
 setInterval(timer, 25);
 </script>
 <body onload="timer()">
-<svg height="9vh" viewBox="0 0 30 10">
+<svg width="13vw" viewBox="0 0 30 10">
     <polygon fill=red stroke-width=0
              points="15,0 25,0 25,10 15,10" />
     <text x="3" y="9" fill="white" font-size="45%">Effi RF</text>
@@ -68,8 +68,8 @@ setInterval(timer, 25);
 <!--
 weisst du, wie man es rechts für quer und oben für hochkant macht?
 -->
-<h4 id="safeTimerDisplay" style="color:white; position:absolute; left:40vh; top:3vh"><pre><b>banana</b></pre></h4>
-<h4 id="live" style="color:red; position:absolute; left:32vh; top:3vh"><pre><b>banana</b></pre></h4>
+<h4 id="safeTimerDisplay" style="color:white; position:absolute; left:19vw; top:3vh"><pre><b>banana</b></pre></h4>
+<h4 id="live" style="color:red; position:absolute; left:15vw; top:3vh"><pre><b>banana</b></pre></h4>
 <br>
 
 <iframe src="https://drive.google.com/file/d/13YQ1bKYdQnsijMs0CcEJIbdisfz-7su1/preview?start=1"
@@ -77,17 +77,6 @@ weisst du, wie man es rechts für quer und oben für hochkant macht?
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
