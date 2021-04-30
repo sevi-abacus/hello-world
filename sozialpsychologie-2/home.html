@@ -5,16 +5,51 @@
 <title>Sozialpsychologie Übungsfragen</title>
  <link rel="stylesheet" type="text/css" href="dark.css" />
 </head>
- 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-<!--
+
 <style>
 body,h1,h2,h3,h4,h5, h6, p {font-family: "Helvetica", sans-serif}
-body {font-size:10vx;}
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 140px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 150%;
+      left: 50%;
+      margin-left: -75px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+    
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
 </style>
--->
+
  
 <body>
 
@@ -28,7 +63,37 @@ body {font-size:10vx;}
 <p><a href="11 - Affiliation">11 - Affiliation</a></p>
 <br/>
 <p><a href=https://psycho.xibrix.ch/index.php?title=Hauptseite#Assessment>Psycho Wiki</a></p>
+<br>
+<br>
+<p><b>Kontakt</b></p>
+    <p>Feedback? Du kennst weitere nützliche Webseiten die verlinkt werden sollten? Ich freue mich auf deine Mail!</p>
+    
+    <input type="text" value="railway-games@protonmail.com" id="myInput" size=28>
+    
+    <div class="tooltip">
+    <button onclick="myFunction()" onmouseout="outFunc()">
+      <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+      Kopieren
+      </button>
+    </div>
+    
+    <script>
+    function myFunction() {
+      var copyText = document.getElementById("myInput");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      
+      var tooltip = document.getElementById("myTooltip");
+      tooltip.innerHTML = "Copied";
+    }
+    
+    function outFunc() {
+      var tooltip = document.getElementById("myTooltip");
+      tooltip.innerHTML = "Copy to clipboard";
+    }
+    </script>
+    <p><b>Du willst dein eigenes Quiz veröffentlichen?</b> Schick mir einfach deine Fragen und Antwortmöglichkeiten!</b> Du kannst auch gerne Bilder (max. 200kB pro Bild) und Javascript-Code anhängen.</p>
 
 </body>
 </html>
-
