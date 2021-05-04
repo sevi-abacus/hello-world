@@ -1,0 +1,150 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Is the Ocean warm or cold?</title>
+    <meta name="description" content="Will the sea temperature be nice to swim? Predict it with basic Geography and sea currents!">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+.question {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+</style>
+</head>
+<body style="background-color:#aabb88">
+<div id="seatemp">
+<h1>Is the Ocean warm or cold? (Oversimplified)</h1>
+
+<p id="result" style="font-size:20vh; margin-top:-4vh; margin-bottom:4vh; padding:0">🌴</p>
+
+<script>
+let zone = 10;
+let west = false;
+let halloween = false;
+let selectedlat = false;
+let selectedcoast = false;
+let selectedseason = false;
+
+const lats = ["40n", "23n", "equator", "23s", "40s"]; // 0 = arctic, 4 = antarctic
+const coasts = ["east", "west"];
+const seasons = ["halloween", "easter"];
+
+const selected = "#a2a2a2";
+const unselected = "#f0f0f0";
+const warm_background = "#ff5533";
+const cold_background = "#33aaff";
+</script>
+
+<!-- latitudes -->
+    <p class="question">Latitude:</p>
+<button type="button" id="40n" onclick='north=true; selectLat("40n"); Evaluate()'>North of 40°N</button>
+<br><button type="button" id="23n" onclick='north=true; selectLat("23n"); Evaluate()'>23°N to 40°N </button>
+<br><button type="button" id="equator" onclick='selectLat("equator"); Evaluate()'>Between 23°S and 23°N</button>
+<br><button type="button" id="23s" onclick='north=false;selectLat("23s"); Evaluate()'>23°S to 40°S</button>
+<br><button type="button" id="40s" onclick='north=false;selectLat("40s"); Evaluate()'>South of 40°S</button>
+<br>
+<!-- coasts -->
+    <p class="question">On the east side or west side of continent (N. America/S. America, Eurasia, Africa, Australia)?</p>
+<button id="east" type="button" onclick='selectCoast("east"); Evaluate()'>East Coast of the Continent (Sunrises over the Ocean on Mainland) </button>
+<br><button id="west" type="button" onclick="selectCoast('west'); Evaluate()">West Coast of the Continent (Sunsets over the Ocean on Mainland) </button>
+<br>
+<!-- seasons -->
+    <p class="question">Season:</p>
+<button id="easter" type="button" onclick="selectSeason('easter'); Evaluate()">December-May</button>
+<br><button id="halloween" type="button" onclick="selectSeason('halloween'); Evaluate()">June-November</button>
+<br>
+<br>
+
+<script>
+function selectLat(id) {
+for (index = 0; index < lats.length; index++) {
+    if (lats[index] == id){
+    	document.getElementById(lats[index]).style.backgroundColor = selected;
+        selectedlat = true;
+        zone = index;
+    } else {
+        document.getElementById(lats[index]).style.backgroundColor = unselected;
+    }
+    }
+}
+
+function selectCoast(id) {
+for (index = 0; index < coasts.length; index++) {
+    if (coasts[index] == id){
+    	document.getElementById(coasts[index]).style.backgroundColor = selected;
+         } else {
+    document.getElementById(coasts[index]).style.backgroundColor = unselected;
+    }
+}
+if (id == "east"){
+    west = false;
+    selectedcoast = true;
+}
+if (id == "west"){
+	west = true;
+    selectedcoast = true;
+}
+}
+
+function selectSeason(id) {
+for (index = 0; index < seasons.length; index++) {
+    if (seasons[index] == id){
+   	document.getElementById(seasons[index]).style.backgroundColor = selected;
+         } else {
+    document.getElementById(seasons[index]).style.backgroundColor = unselected;
+    }
+}
+if (id == "halloween"){
+	halloween = true;
+    selectedseason=true;
+}
+if (id == "easter"){
+	halloween = false;
+    selectedseason=true;
+}
+}
+
+
+function Evaluate() {
+    if (selectedlat && (selectedcoast && selectedseason)){
+        if (zone==2 || (zone==1 && (halloween||(!west))|| (zone==3 && (!halloween||!west)))){
+            document.body.style.backgroundColor = warm_background;
+            document.getElementById("result").innerHTML = "🌴";
+        } else if ((zone==0 || zone==4) || (zone==1 && (west&&(!halloween)))|| zone==3 && (halloween&&west)){
+    document.body.style.backgroundColor = cold_background;
+    document.getElementById("result").innerHTML = "🌲";
+}
+}
+
+}
+
+selectLat(10);
+selectCoast("none");
+
+var d = new Date();
+var n = d.getMonth();
+const moreSatisfying = true;
+if (moreSatisfying){
+	selectSeason("none");
+	} else {
+  if ((5 <= n) && (n <= 10)){ //june(5) to november(10)
+    selectSeason("halloween");
+  } else {
+    selectSeason("easter");
+  }
+}
+
+</script>
+
+<br>
+<div style="position:absolute; top:100vh">
+    <h1 style="color:white">Sea currents:</h1>
+<img src="https://earthhow.com/wp-content/uploads/2017/02/Ocean-Currents-Transparent.png"
+     alt="sea currents" width=screen.width>
+</div>
+
+</div>
+</body>
+</html>
