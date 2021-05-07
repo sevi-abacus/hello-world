@@ -65,6 +65,23 @@ body,h1,h2,h3,h4,h5, h6, p {font-family: "Helvetica", sans-serif}
   height: 2.5rem;            /* Footer height */
 }
 </style>
+ 
+  <script>
+    function myFunction() {
+      var copyText = document.getElementById("myInput");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      
+      var tooltip = document.getElementById("myTooltip");
+      tooltip.innerHTML = "Copied";
+    }
+    
+    function outFunc() {
+      var tooltip = document.getElementById("myTooltip");
+      tooltip.innerHTML = "Copy to clipboard";
+    }
+    </script>
 
  
 <body>
@@ -96,22 +113,7 @@ body,h1,h2,h3,h4,h5, h6, p {font-family: "Helvetica", sans-serif}
       </button>
     </div>
     
-    <script>
-    function myFunction() {
-      var copyText = document.getElementById("myInput");
-      copyText.select();
-      copyText.setSelectionRange(0, 99999);
-      document.execCommand("copy");
-      
-      var tooltip = document.getElementById("myTooltip");
-      tooltip.innerHTML = "Copied";
-    }
-    
-    function outFunc() {
-      var tooltip = document.getElementById("myTooltip");
-      tooltip.innerHTML = "Copy to clipboard";
-    }
-    </script>
+   
     <p><b>Du willst dein eigenes Quiz veröffentlichen?</b> Schick mir einfach deine Fragen und Antwortmöglichkeiten!</b> Du kannst auch gerne Bilder (max. 200kB pro Bild) und Javascript-Code anhängen.</p>
 </footer>
  </div>
