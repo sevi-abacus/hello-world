@@ -26,8 +26,8 @@ function wawa() {
     var solution2 = b / a;
   } else {
 
-  var solution1 = -(b + Math.sqrt(b**2 - 4*a*c)) / (2 * a);
-  var solution2 = -(b - Math.sqrt(b**2 - 4*a*c)) / (2 * a);
+  var solution1 = ((-b) - Math.sqrt(b**2 - (4*a*c))) / (2 * a);  // da stimmt etwas nicht
+  var solution2 = ((-b) + Math.sqrt(b**2 - (4*a*c))) / (2 * a);
   }
 
   document.getElementById('alert').innerHTML = solution1 + " / " + solution2;
