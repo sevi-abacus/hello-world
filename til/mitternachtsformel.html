@@ -20,15 +20,16 @@ function wawa() {
   var b = document.getElementById('input_id2').value;
   var c = document.getElementById('input_id3').value;
   
-  // now, for some very weird reason I can't explain, this doesn't work when c = 0. 
+  /*
   if (c == 0){
     var solution1 = 0;
     var solution2 = b / a;
   } else {
+  */
 
-  var solution1 = ((-b) - Math.sqrt(b**2 - (4*a*c))) / (2 * a);  // da stimmt etwas nicht
+  var solution1 = ((-b) - Math.sqrt(b**2 - (4*a*c))) / (2 * a);  
   var solution2 = ((-b) + Math.sqrt(b**2 - (4*a*c))) / (2 * a);
-  }
+  //}
 
   document.getElementById('alert').innerHTML = solution1 + " / " + solution2;
 }
