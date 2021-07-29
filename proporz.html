@@ -26,7 +26,7 @@ function calculate() {
         - document.getElementById('glp').value
         - document.getElementById('siebte').value).toFixed(1);
     document.getElementById('rest').append(restliche);
-    if ((restliche < 0) || (restliche >= 100)){
+    if ((restliche < 0) || (restliche >= 100)) {
         document.getElementById('rest').style.color = '#f00';
     } else {
         document.getElementById('rest').style.color = '#000';
@@ -124,33 +124,30 @@ function calculate() {
             siebte++;
         }
         verteilt++;
-
-
-        document.getElementById("lague").innerHTML = "Nach dem Sainte-Lague Algorithmus:<br/>";
-
-        document.getElementById("lague").append("SVP ");
-        document.getElementById("lague").append(String(svp));
-        document.getElementById("lague").append("; SP ");
-        document.getElementById("lague").append(String(sp));
-        document.getElementById("lague").append("; FDP ");
-        document.getElementById("lague").append(String(fdp));
-        document.getElementById("lague").append("; Mitte ");
-        document.getElementById("lague").append(String(mitte));
-        document.getElementById("lague").append("; Grüne ");
-        document.getElementById("lague").append(String(gruene));
-        document.getElementById("lague").append("; GLP ");
-        document.getElementById("lague").append(String(glp));
-        document.getElementById("lague").append("; Siebtgrösste ");
-        document.getElementById("lague").append(String(siebte));
     }
+
+    document.getElementById("lague").innerHTML = "Nach dem Sainte-Lague Algorithmus:<br/>";
+
+    document.getElementById("lague").append("SVP ");
+    document.getElementById("lague").append(String(svp));
+    document.getElementById("lague").append("; SP ");
+    document.getElementById("lague").append(String(sp));
+    document.getElementById("lague").append("; FDP ");
+    document.getElementById("lague").append(String(fdp));
+    document.getElementById("lague").append("; Mitte ");
+    document.getElementById("lague").append(String(mitte));
+    document.getElementById("lague").append("; Grüne ");
+    document.getElementById("lague").append(String(gruene));
+    document.getElementById("lague").append("; GLP ");
+    document.getElementById("lague").append(String(glp));
+    document.getElementById("lague").append("; Siebtgrösste ");
+    document.getElementById("lague").append(String(siebte));
+
 }
-
-calculate();
-
 </script>
 
 <h2>Welche Partei hätte, bloss nach Verteilalgorithmen, wie viele Bundesratsitze?</h2>
-	
+
 
 
 <form onclick="calculate()">
@@ -175,6 +172,10 @@ calculate();
 
  <p id="hagenbach"></p>
 <p id="lague"></p>
+
+<script>
+calculate();
+</script>
 
 </body>
 </html>
