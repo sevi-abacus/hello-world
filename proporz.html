@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+
+
+<script>
+
+const verteilszahl = 12.5; //wir runden hier nicht auf 13, da in wahrheit mehr als 100 stimmen
+
+function calculate() {
+    document.getElementById('rest').innerHTML = "%Kleinere Parteien: ";
+    var restliche = (100.000001
+        - document.getElementById('svp').value
+        - document.getElementById('sp').value
+        - document.getElementById('fdp').value
+        - document.getElementById('mitte').value
+        - document.getElementById('gruene').value
+        - document.getElementById('glp').value
+        - document.getElementById('siebte').value).toFixed(1);
+    document.getElementById('rest').append(restliche);
+    if ((restliche < 0) || (restliche >= 100)){
+        document.getElementById('rest').style.color = '#f00';
+    } else {
+        document.getElementById('rest').style.color = '#000';
+    }
+
+    /*wir nehmen eine million stimmen an. hier fällt auf, dass man einen sitz auf sicher hat, wenn man > 12.5% Stimmen hat, etwa 2 svp, 1 sp, 1 fdp, 1 mitte, 1 grüne
+*/
+
+    var svp_stimmen = document.getElementById('svp').value * 10000;
+    var sp_stimmen = document.getElementById('sp').value * 10000;
+    var fdp_stimmen = document.getElementById('fdp').value * 10000;
+    var mitte_stimmen = document.getElementById('mitte').value * 10000;
+    var gruene_stimmen = document.getElementById('gruene').value * 10000;
+    var glp_stimmen = document.getElementById('glp').value * 10000;
+    var siebte_stimmen = document.getElementById('siebte').value * 10000;
+
+    var svp = Math.floor(svp_stimmen / 125001);
+    var sp = Math.floor(sp_stimmen / 125001);
+    var fdp = Math.floor(fdp_stimmen / 125001);
+    var mitte = Math.floor(mitte_stimmen / 125001);
+    var gruene = Math.floor(gruene_stimmen / 125001);
+    var glp = Math.floor(glp_stimmen / 125001);
+    var siebte = Math.floor(siebte_stimmen / 125001);
+
+    verteilt = svp + sp + fdp + mitte + gruene + glp + siebte;
+
+    while (verteilt < 7) {
+        var max = Math.max((svp_stimmen / (svp + 1)), (sp_stimmen / (sp + 1)),
+            (fdp_stimmen / (fdp + 1)), (mitte_stimmen / (mitte + 1)), (gruene_stimmen / (gruene + 1)),
+            (glp_stimmen / (glp + 1)), (siebte_stimmen / (siebte + 1)))
+        if (max == svp_stimmen / (svp + 1)) {
+            svp++;
+        } else if (max == sp_stimmen / (sp + 1)) {
+            sp++;
+        } else if (max == fdp_stimmen / (fdp + 1)) {
+            fdp++;
+        } else if (max == mitte_stimmen / (mitte + 1)) {
+            mitte++;
+        } else if (max == gruene_stimmen / (gruene + 1)) {
+            gruene++;
+        } else if (max == glp_stimmen / (glp + 1)) {
+            glp++;
+        } else if (max == siebte_stimmen / (siebte + 1)) {
+            siebte++;
+        }
+        verteilt++;
+    }
+
+    document.getElementById("hagenbach").innerHTML = "Nach dem Hagenbach-Bischoff Algorithmus:<br/>";
+
+    document.getElementById("hagenbach").append("SVP ");
+    document.getElementById("hagenbach").append(String(svp));
+    document.getElementById("hagenbach").append("; SP ");
+    document.getElementById("hagenbach").append(String(sp));
+    document.getElementById("hagenbach").append("; FDP ");
+    document.getElementById("hagenbach").append(String(fdp));
+    document.getElementById("hagenbach").append("; Mitte ");
+    document.getElementById("hagenbach").append(String(mitte));
+    document.getElementById("hagenbach").append("; Grüne ");
+    document.getElementById("hagenbach").append(String(gruene));
+    document.getElementById("hagenbach").append("; GLP ");
+    document.getElementById("hagenbach").append(String(glp));
+    document.getElementById("hagenbach").append("; Siebtgrösste ");
+    document.getElementById("hagenbach").append(String(siebte));
+
+
+//lague verfahren
+    var svp = Math.floor(svp_stimmen / 125001);
+    var sp = Math.floor(sp_stimmen / 125001);
+    var fdp = Math.floor(fdp_stimmen / 125001);
+    var mitte = Math.floor(mitte_stimmen / 125001);
+    var gruene = Math.floor(gruene_stimmen / 125001);
+    var glp = Math.floor(glp_stimmen / 125001);
+    var siebte = Math.floor(siebte_stimmen / 125001);
+
+    verteilt = svp + sp + fdp + mitte + gruene + glp + siebte;
+
+    while (verteilt < 7) {
+        var max = Math.max((svp_stimmen / (2 * svp + 1)), (sp_stimmen / (2 * sp + 1)),
+            (fdp_stimmen / (2 * fdp + 1)), (mitte_stimmen / (2 * mitte + 1)), (gruene_stimmen / (2 * gruene + 1)),
+            (glp_stimmen / (2 * glp + 1)), (siebte_stimmen / (2 * siebte + 1)))
+        if (max == svp_stimmen / (2 * svp + 1)) {
+            svp++;
+        } else if (max == sp_stimmen / (2 * sp + 1)) {
+            sp++;
+        } else if (max == fdp_stimmen / (2 * fdp + 1)) {
+            fdp++;
+        } else if (max == mitte_stimmen / (2 * mitte + 1)) {
+            mitte++;
+        } else if (max == gruene_stimmen / (2 * gruene + 1)) {
+            gruene++;
+        } else if (max == glp_stimmen / (2 * glp + 1)) {
+            glp++;
+        } else if (max == siebte_stimmen / (2 * siebte + 1)) {
+            siebte++;
+        }
+        verteilt++;
+
+
+        document.getElementById("lague").innerHTML = "Nach dem Sainte-Lague Algorithmus:<br/>";
+
+        document.getElementById("lague").append("SVP ");
+        document.getElementById("lague").append(String(svp));
+        document.getElementById("lague").append("; SP ");
+        document.getElementById("lague").append(String(sp));
+        document.getElementById("lague").append("; FDP ");
+        document.getElementById("lague").append(String(fdp));
+        document.getElementById("lague").append("; Mitte ");
+        document.getElementById("lague").append(String(mitte));
+        document.getElementById("lague").append("; Grüne ");
+        document.getElementById("lague").append(String(gruene));
+        document.getElementById("lague").append("; GLP ");
+        document.getElementById("lague").append(String(glp));
+        document.getElementById("lague").append("; Siebtgrösste ");
+        document.getElementById("lague").append(String(siebte));
+    }
+}
+
+</script>
+
+<h2>Wie wäre die mathematische Sitzverteilung im Bundesrat?</h2>
+
+
+<form onclick="calculate()">
+
+  <label for="svp">%SVP:</label><br>
+  <input type="number" id="svp" name="svp" min="0" max="100" value="25.6" step="0.1"><br>
+  <label for="sp">%SP:</label><br>
+  <input type="number" id="sp" name="sp" min="0" max="100" value="16.8" step="0.1"><br>
+  <label for="fdp">%FDP:</label><br>
+  <input type="number" id="fdp" name="fdp" min="0" max="100" value="15.1" step="0.1"><br>
+  <label for="mitte">%Mitte:</label><br>
+  <input type="number" id="mitte" name="mitte" min="0" max="100" value="13.9" step="0.1"><br>
+    <label for="gruene">%Grüne:</label><br>
+  <input type="number" id="gruene" name="gruene" min="0" max="100" value="13.2" step="0.1"><br>
+     <label for="glp">%GLP:</label><br>
+  <input type="number" id="glp" name="glp" min="0" max="100" value="7.8" step="0.1"><br>
+      <label for="siebte">%Siebtgrösste:</label><br>
+  <input type="number" id="siebte" name="siebte" min="0" max="100" value="2.1" step="0.1"><br>
+
+  <p id="rest">%Kleinere Parteien: 5.5</p>
+ </form>
+
+ <p id="hagenbach"></p>
+<br>
+<p id="lague"></p>
+
+</body>
+</html>
