@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upper, Main, and Lower Part of Schaffhausen</title>
+  <meta name="description" content="Interactive Map showing the three parts of the Canton of Schaffhausen, the elevation of the Rhine River, and the most populous municipality.">
+  <meta name="keywords" content="Schaffhausen, Canton, Parts, Rhine, Stein am Rhein, Buchberg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+    body {
+  background-color: #ff0;
+}
+        
+polygon:hover { /* modified */
+    fill: silver;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+    </style>
+</head>
+<body>
+<svg viewport="0 0 450 200" preserveAspectRatio="none" width="auto">
+
+<polygon points="
+327,95
+324,81
+310,77
+311,66
+322,69
+327,67
+323,61
+280,48
+278,38
+270,41
+252,52
+252,60
+278,66
+280,71
+273,71
+270,81
+293,82
+311,91
+306,96
+314,99
+" id='x252y38' onclick="svgFunction('x252y38')">
+<title>Rhine discharges from upper part of Schaffhausen 
+394 meters above sea level.
+Stein am Rhein is its most populous municipality.</title>
+</polygon>
+
+
+<polygon points="
+221,72
+230,54
+213,45
+221,34
+234,33
+216,21
+201,27
+192,6
+174,0
+158,26
+148,0
+114,0
+114,12
+61,17
+34,40
+39,48
+11,60
+9,90
+50,109
+92,104
+112,87
+123,93
+155,82
+155,72
+167,70
+181,76
+182,57
+204,56
+" id='x9y0' onclick="svgFunction('x9y0')">
+<title>Rhine discharges from main part of Schaffhausen 
+359 meters above sea level.
+Schaffhausen is its most populous municipality.</title>
+</polygon>
+
+
+
+<polygon points="
+136,130
+94,144
+110,170
+" id='x94y130' onclick="svgFunction('x94y130')">
+<title>Rhine discharges from lower part of Schaffhausen 
+344 meters above sea level.
+Buchberg is its most populous municipality.</title>
+</polygon>
+
+  <polyline points="87,160 102,160 110,170 136,130 136,80 290,80 330,95"
+  style="fill:none;stroke:#00f;stroke-width:6" />
+  
+  <polygon points="
+80,160
+95, 152
+95, 168
+" style="fill:#00f" />
+
+  <text x="15" y="165" fill="#00f">Basel</text>
+  <text x="15" y="180" fill="#00f">Rotterdam</text>
+  <text x="335" y="85" fill="#00f">Lake Constance</text>
+  
+
+    </svg>
+</body>
+</html>
