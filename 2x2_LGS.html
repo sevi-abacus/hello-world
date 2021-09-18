@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<h2>Lineares Gleichungssystem mit zwei Gleichungen und zwei Unbekannten</h2>
+
+<button onclick="myFunction()">Neue Aufgabe</button>
+
+<h3 id="erste_gleichung"></h3>
+<h3 id="zweite_gleichung"></h3>
+
+<button onclick="solution()">Lösung</button>
+<p id="xis"></p>
+<p id="yis"></p>
+
+
+<script>
+var a1;
+var b1;
+var a2;
+var b2;
+var x;
+var y;
+function myFunction() {
+    document.getElementById("xis").innerHTML="";
+    document.getElementById("yis").innerHTML="";
+	let trying = true;
+    while (trying) {
+        a1 = Math.floor((Math.random() * 11) - 5); // variable a erste gleichung
+        b1 = Math.floor((Math.random() * 11) - 5);// variable b erste gleichung
+        a2 = Math.floor((Math.random() * 11) - 5); // variable a zweite gleichung
+        b2 = Math.floor((Math.random() * 11) - 5);  // variable b zweite gleichung
+
+        let zeros = 0;
+        if (a1 == 0) {
+            zeros++;
+        }
+        if (a2 == 0) {
+            zeros++;
+        }
+        if (b1 == 0) {
+            zeros++;
+        }
+        if (b2 == 0) {
+            zeros++;
+        }
+
+        if ((zeros < 2) && ((a1 / a2).toExponential(1) != (b1 / b2).toExponential(1))) {
+            trying = false;
+        }
+    }
+    x = Math.floor((Math.random() * 11) - 5);
+    y = Math.floor((Math.random() * 11) - 5);
+    var c1 = a1 * x + b1 * y;
+    var c2 = a2 * x + b2 * y;
+    //erste gleichung
+    let stringx = a1.toString()+"x";
+    let stringy = "";
+    if (b1<0){
+        stringy = " - ";
+    }else{
+        stringy = " + ";
+    }
+    stringy = stringy + Math.abs(b1)+"y";
+    document.getElementById("erste_gleichung").innerHTML = stringx+stringy+" = "+c1.toString();
+    //zweite gleichung
+    stringx = a2.toString()+"x";
+    stringy = "";
+    if (b2<0){
+        stringy = " - ";
+    }else{
+        stringy = " + ";
+    }
+    stringy = stringy + Math.abs(b2)+"y";
+    document.getElementById("zweite_gleichung").innerHTML = stringx+stringy+" = "+c2.toString();
+}
+function solution() {
+    document.getElementById("xis").innerHTML="x = "+x.toString();
+    document.getElementById("yis").innerHTML="y = "+y.toString();
+
+}
+myFunction()
+</script>
+
+</body>
+</html>
