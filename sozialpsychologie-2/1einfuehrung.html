@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf8">
+  <title>Quiz</title>
+</head>
+<body>
+<div style='position: relative;'> 
+
+<h2>Was ist Priming?
+</h2> 
+
+    <div id = 'block_q1a1'style = 'padding: 10px;'>
+    <label for ='option_q1a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q1a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Eine Methode, bei der neutrale Wörter zu einem sinnvollen Satz zusammengefügt werden
+</label>
+    <span id='result_q1a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q1a2'style = 'padding: 10px;'>
+    <label for ='option_q1a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q1a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Die Aktivierung eines Reizes erleichtert die anschliessende Verarbeitung eines anderen, damit zusammenhängenden Reizes
+</label>
+    <span id='result_q1a2'> </span>
+    </div> 
+
+    
+    <div id = 'block_q1a3'style = 'padding: 10px;'>
+    <label for ='option_q1a3' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q1a3' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Die voraussetzende Eigenschaft, Reize wahrnehmen zu können
+</label>
+    <span id='result_q1a3'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer1()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Was ist ein Feldexperiment?
+</h2> 
+
+    <div id = 'block_q2a1'style = 'padding: 10px;'>
+    <label for ='option_q2a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q2a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Ein Experiment, welches auf einem grossflächigem Raum ausgeführt wird
+</label>
+    <span id='result_q2a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q2a2'style = 'padding: 10px;'>
+    <label for ='option_q2a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q2a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Eine unter künstlichen Bedingungen durchgeführte Studie, in der die Versuchsleitung absichtlich eine Veränderung der Situation herbeiführt, um die Konsequenzen dieser Veränderung zu untersuchen, während sie alle anderen Faktoren konstant hält.
+</label>
+    <span id='result_q2a2'> </span>
+    </div> 
+
+    
+    <div id = 'block_q2a3'style = 'padding: 10px;'>
+    <label for ='option_q2a3' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q2a3' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Ein echtes Experiment mit Zufallszuweisung in einem natürlichen Setting
+</label>
+    <span id='result_q2a3'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer2()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Was ist empirische Wissenschaft?
+</h2> 
+
+    <div id = 'block_q3a1'style = 'padding: 10px;'>
+    <label for ='option_q3a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q3a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Eine Wissenschaft, welche sich mit dem psychologischen Imperialismus ausseinandersetzt
+</label>
+    <span id='result_q3a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q3a2'style = 'padding: 10px;'>
+    <label for ='option_q3a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q3a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Eine Wissenschaft, bei der von wiederholten Einzelbeobachtungen oder sorgfältiger Einzelfallanalyse eine allgemeine Regel abgeleitet wird</label>
+    <span id='result_q3a2'> </span>
+    </div> 
+
+    
+    <div id = 'block_q3a3'style = 'padding: 10px;'>
+    <label for ='option_q3a3' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q3a3' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Eine Wissenschaft, bei der durch Messen und intersubjektiv verifizierbare Beobachtungen gleiche Ergebnisse erzielt werden
+</label>
+    <span id='result_q3a3'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer3()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+
+  <hr>
+</div>
+<script>
+function displayAnswer1() { 
+
+        if (document.getElementById('option_q1a1').checked) {
+          document.getElementById('block_q1a1').style.background = '#FF0000'
+          document.getElementById('result_q1a1').style.color = '#FF0000'
+          document.getElementById('result_q1a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q1a2').checked) {
+          document.getElementById('block_q1a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q1a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q1a2').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q1a3').checked) {
+          document.getElementById('block_q1a3').style.background = '#FF0000'
+          document.getElementById('result_q1a3').style.color = '#FF0000'
+          document.getElementById('result_q1a3').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer2() { 
+
+        if (document.getElementById('option_q2a1').checked) {
+          document.getElementById('block_q2a1').style.background = '#FF0000'
+          document.getElementById('result_q2a1').style.color = '#FF0000'
+          document.getElementById('result_q2a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q2a2').checked) {
+          document.getElementById('block_q2a2').style.background = '#FF0000'
+          document.getElementById('result_q2a2').style.color = '#FF0000'
+          document.getElementById('result_q2a2').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q2a3').checked) {
+          document.getElementById('block_q2a3').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q2a3').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q2a3').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer3() { 
+
+        if (document.getElementById('option_q3a1').checked) {
+          document.getElementById('block_q3a1').style.background = '#FF0000'
+          document.getElementById('result_q3a1').style.color = '#FF0000'
+          document.getElementById('result_q3a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q3a2').checked) {
+          document.getElementById('block_q3a2').style.background = '#FF0000'
+          document.getElementById('result_q3a2').style.color = '#FF0000'
+          document.getElementById('result_q3a2').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q3a3').checked) {
+          document.getElementById('block_q3a3').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q3a3').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q3a3').innerHTML = 'Correct!' 
+
+        }
+        } 
+
+</script>
+<p><a href=index.html>Alle Sozialpsychologie Quiz</a></p>
+</body>
+</html>
