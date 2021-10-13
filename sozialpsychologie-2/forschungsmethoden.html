@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf8">
+  <title>Quiz</title>
+</head>
+<body>
+<div style='position: relative;'> 
+
+<h2>"abgelenkt zu sein" ist...
+</h2> 
+
+    <div id = 'block_q1a1'style = 'padding: 10px;'>
+    <label for ='option_q1a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q1a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    eine Variable
+</label>
+    <span id='result_q1a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q1a2'style = 'padding: 10px;'>
+    <label for ='option_q1a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q1a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    ein Konstrukt
+</label>
+    <span id='result_q1a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer1()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Die Anzahl Fehler pro 10 Minuten in einem Fahrsimulator ist...
+</h2> 
+
+    <div id = 'block_q2a1'style = 'padding: 10px;'>
+    <label for ='option_q2a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q2a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    eine Variable
+</label>
+    <span id='result_q2a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q2a2'style = 'padding: 10px;'>
+    <label for ='option_q2a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q2a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    ein Konstrukt
+</label>
+    <span id='result_q2a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer2()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Kann von einer Theorie abgeleitet werden...
+</h2> 
+
+    <div id = 'block_q3a1'style = 'padding: 10px;'>
+    <label for ='option_q3a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q3a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Hypothese
+</label>
+    <span id='result_q3a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q3a2'style = 'padding: 10px;'>
+    <label for ='option_q3a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q3a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Messung
+</label>
+    <span id='result_q3a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer3()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Was ist ein Feldexperiment?
+</h2> 
+
+    <div id = 'block_q4a1'style = 'padding: 10px;'>
+    <label for ='option_q4a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q4a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Eine unter künstlichen Bedingungen durchgeführte Studie, in der die Versuchsleitung absichtlich eine Veränderung der Situation herbeiführt, um die Konsequenzen dieser Veränderung zu untersuchen, während sie alle anderen Faktoren konstant hält.
+</label>
+    <span id='result_q4a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q4a2'style = 'padding: 10px;'>
+    <label for ='option_q4a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q4a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Ein Experiment, welches auf einem grossflächigem Raum ausgeführt wird
+</label>
+    <span id='result_q4a2'> </span>
+    </div> 
+
+    
+    <div id = 'block_q4a3'style = 'padding: 10px;'>
+    <label for ='option_q4a3' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q4a3' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Ein echtes Experiment mit Zufallszuweisung in einem natürlichen Setting
+</label>
+    <span id='result_q4a3'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer4()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Vergleicht man das Stresslevel von Personen, die mit dem Fahrrad angereist sind, mit denen, die mit der S-Bahn angereist sind, so ist das
+</h2> 
+
+    <div id = 'block_q5a1'style = 'padding: 10px;'>
+    <label for ='option_q5a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q5a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    ...ein randomisiertes Experiment
+</label>
+    <span id='result_q5a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q5a2'style = 'padding: 10px;'>
+    <label for ='option_q5a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q5a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    ...ein Quasi-Experiment
+</label>
+    <span id='result_q5a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer5()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Sind korrelative Studien randomisiert?
+</h2> 
+
+    <div id = 'block_q6a1'style = 'padding: 10px;'>
+    <label for ='option_q6a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q6a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Nein
+</label>
+    <span id='result_q6a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q6a2'style = 'padding: 10px;'>
+    <label for ='option_q6a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q6a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Ja
+</label>
+    <span id='result_q6a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer6()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Sie machen eine Umfrage an einer Hochschule zu LGBTQ+ Themen. An der Hochschule identifizieren sich 30% der Studierenden als religiös. Sie wählen zufällig 10 Studierende, achten jedoch darauf, dass sich genau 3 davon als religiös identifizieren. Dies ist eine...
+</h2> 
+
+    <div id = 'block_q7a1'style = 'padding: 10px;'>
+    <label for ='option_q7a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q7a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Einfache Zufallsstichprobe
+</label>
+    <span id='result_q7a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q7a2'style = 'padding: 10px;'>
+    <label for ='option_q7a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q7a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Quotenstichprobe
+</label>
+    <span id='result_q7a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer7()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Ich manipuliere den Alkoholgehalt im Gin und messe die Reaktionszeit. Der Alkoholgehalt ist hier eine
+</h2> 
+
+    <div id = 'block_q8a1'style = 'padding: 10px;'>
+    <label for ='option_q8a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q8a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    abhängige Variable
+</label>
+    <span id='result_q8a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q8a2'style = 'padding: 10px;'>
+    <label for ='option_q8a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q8a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    unabhängige Variable
+</label>
+    <span id='result_q8a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer8()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Bei gegebener ... lassen sich Befunde auf weitere Situationen und Personen(-gruppen) generalisieren als bloss diejenige, aus denen wir die Befunde erhalten haben. 
+</h2> 
+
+    <div id = 'block_q9a1'style = 'padding: 10px;'>
+    <label for ='option_q9a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q9a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    interner Validität
+</label>
+    <span id='result_q9a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q9a2'style = 'padding: 10px;'>
+    <label for ='option_q9a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q9a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    externer Validität
+</label>
+    <span id='result_q9a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer9()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Können nichtreaktive Messmethoden eine Verzerrung des Verhaltens der Probanden hin zum sozial Erwünschtem verhindern?
+</h2> 
+
+    <div id = 'block_q10a1'style = 'padding: 10px;'>
+    <label for ='option_q10a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q10a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Nein
+</label>
+    <span id='result_q10a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q10a2'style = 'padding: 10px;'>
+    <label for ='option_q10a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q10a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Ja
+</label>
+    <span id='result_q10a2'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer10()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+<h2>Die Versuchsleitung erwartet, entsprechend ihrer Hypothese, oft ein gewisses Verhalten von ihren Versuchspersonen. Welche Massnahme verhindert NICHT, dass diese Erwartungen an die Versuchspersonen diese beeinflussen?
+</h2> 
+
+    <div id = 'block_q11a1'style = 'padding: 10px;'>
+    <label for ='option_q11a1' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q11a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Blinding der Versuchsleitung
+</label>
+    <span id='result_q11a1'> </span>
+    </div> 
+
+    
+    <div id = 'block_q11a2'style = 'padding: 10px;'>
+    <label for ='option_q11a2' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q11a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Die Versuchsleitung interagiert bloss indirekt, und standartisiert, mit den Probanden der verschiedenen Bedingungen. </label>
+    <span id='result_q11a2'> </span>
+    </div> 
+
+    
+    <div id = 'block_q11a3'style = 'padding: 10px;'>
+    <label for ='option_q11a3' style=' padding: 5px; font-size: 1.5rem;'>
+    <input type = 'radio' name = 'option' value = '6' id = 'option_q11a3' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
+    Cover Story
+</label>
+    <span id='result_q11a3'> </span>
+    </div> 
+
+    <button type = 'button' onclick = 'displayAnswer11()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
+
+  <hr>
+</div>
+<script>
+function displayAnswer1() { 
+
+        if (document.getElementById('option_q1a1').checked) {
+          document.getElementById('block_q1a1').style.background = '#FF0000'
+          document.getElementById('result_q1a1').style.color = '#FF0000'
+          document.getElementById('result_q1a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q1a2').checked) {
+          document.getElementById('block_q1a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q1a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q1a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer2() { 
+
+        if (document.getElementById('option_q2a1').checked) {
+          document.getElementById('block_q2a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q2a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q2a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q2a2').checked) {
+          document.getElementById('block_q2a2').style.background = '#FF0000'
+          document.getElementById('result_q2a2').style.color = '#FF0000'
+          document.getElementById('result_q2a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer3() { 
+
+        if (document.getElementById('option_q3a1').checked) {
+          document.getElementById('block_q3a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q3a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q3a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q3a2').checked) {
+          document.getElementById('block_q3a2').style.background = '#FF0000'
+          document.getElementById('result_q3a2').style.color = '#FF0000'
+          document.getElementById('result_q3a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer4() { 
+
+        if (document.getElementById('option_q4a1').checked) {
+          document.getElementById('block_q4a1').style.background = '#FF0000'
+          document.getElementById('result_q4a1').style.color = '#FF0000'
+          document.getElementById('result_q4a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q4a2').checked) {
+          document.getElementById('block_q4a2').style.background = '#FF0000'
+          document.getElementById('result_q4a2').style.color = '#FF0000'
+          document.getElementById('result_q4a2').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q4a3').checked) {
+          document.getElementById('block_q4a3').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q4a3').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q4a3').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer5() { 
+
+        if (document.getElementById('option_q5a1').checked) {
+          document.getElementById('block_q5a1').style.background = '#FF0000'
+          document.getElementById('result_q5a1').style.color = '#FF0000'
+          document.getElementById('result_q5a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q5a2').checked) {
+          document.getElementById('block_q5a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q5a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q5a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer6() { 
+
+        if (document.getElementById('option_q6a1').checked) {
+          document.getElementById('block_q6a1').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q6a1').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q6a1').innerHTML = 'Correct!' 
+
+        }
+        
+        if (document.getElementById('option_q6a2').checked) {
+          document.getElementById('block_q6a2').style.background = '#FF0000'
+          document.getElementById('result_q6a2').style.color = '#FF0000'
+          document.getElementById('result_q6a2').innerHTML = 'Incorrect!' 
+
+        }
+        } 
+function displayAnswer7() { 
+
+        if (document.getElementById('option_q7a1').checked) {
+          document.getElementById('block_q7a1').style.background = '#FF0000'
+          document.getElementById('result_q7a1').style.color = '#FF0000'
+          document.getElementById('result_q7a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q7a2').checked) {
+          document.getElementById('block_q7a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q7a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q7a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer8() { 
+
+        if (document.getElementById('option_q8a1').checked) {
+          document.getElementById('block_q8a1').style.background = '#FF0000'
+          document.getElementById('result_q8a1').style.color = '#FF0000'
+          document.getElementById('result_q8a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q8a2').checked) {
+          document.getElementById('block_q8a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q8a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q8a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer9() { 
+
+        if (document.getElementById('option_q9a1').checked) {
+          document.getElementById('block_q9a1').style.background = '#FF0000'
+          document.getElementById('result_q9a1').style.color = '#FF0000'
+          document.getElementById('result_q9a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q9a2').checked) {
+          document.getElementById('block_q9a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q9a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q9a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer10() { 
+
+        if (document.getElementById('option_q10a1').checked) {
+          document.getElementById('block_q10a1').style.background = '#FF0000'
+          document.getElementById('result_q10a1').style.color = '#FF0000'
+          document.getElementById('result_q10a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q10a2').checked) {
+          document.getElementById('block_q10a2').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q10a2').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q10a2').innerHTML = 'Correct!' 
+
+        }
+        } 
+function displayAnswer11() { 
+
+        if (document.getElementById('option_q11a1').checked) {
+          document.getElementById('block_q11a1').style.background = '#FF0000'
+          document.getElementById('result_q11a1').style.color = '#FF0000'
+          document.getElementById('result_q11a1').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q11a2').checked) {
+          document.getElementById('block_q11a2').style.background = '#FF0000'
+          document.getElementById('result_q11a2').style.color = '#FF0000'
+          document.getElementById('result_q11a2').innerHTML = 'Incorrect!' 
+
+        }
+        
+        if (document.getElementById('option_q11a3').checked) {
+          document.getElementById('block_q11a3').style.background = 'rgb(50, 205, 50)'
+          document.getElementById('result_q11a3').style.color = 'rgb(50, 205, 50)'
+          document.getElementById('result_q11a3').innerHTML = 'Correct!' 
+
+        }
+        } 
+
+</script>
+<p><a href=https://railway-games.cyou/sozialpsychologie-2/index.html>Alle Sozialpsychologie Quiz</a></p>
+</body>
+</html>
