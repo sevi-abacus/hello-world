@@ -70,36 +70,6 @@
     <span id='result_q3a2'> </span>
     </div> 
 
-    <button type = 'button' onclick = 'displayAnswer3()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
-<h2>Was ist ein Feldexperiment?
-</h2> 
-
-    <div id = 'block_q4a1'style = 'padding: 10px;'>
-    <label for ='option_q4a1' style=' padding: 5px; font-size: 1.5rem;'>
-    <input type = 'radio' name = 'option' value = '6' id = 'option_q4a1' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
-    Eine unter künstlichen Bedingungen durchgeführte Studie, in der die Versuchsleitung absichtlich eine Veränderung der Situation herbeiführt, um die Konsequenzen dieser Veränderung zu untersuchen, während sie alle anderen Faktoren konstant hält.
-</label>
-    <span id='result_q4a1'> </span>
-    </div> 
-
-    
-    <div id = 'block_q4a2'style = 'padding: 10px;'>
-    <label for ='option_q4a2' style=' padding: 5px; font-size: 1.5rem;'>
-    <input type = 'radio' name = 'option' value = '6' id = 'option_q4a2' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
-    Ein Experiment, welches auf einem grossflächigem Raum ausgeführt wird
-</label>
-    <span id='result_q4a2'> </span>
-    </div> 
-
-    
-    <div id = 'block_q4a3'style = 'padding: 10px;'>
-    <label for ='option_q4a3' style=' padding: 5px; font-size: 1.5rem;'>
-    <input type = 'radio' name = 'option' value = '6' id = 'option_q4a3' style = 'margin-right: 10px; vertical-align: middle; margin-top: -2px;'/>
-    Ein echtes Experiment mit Zufallszuweisung in einem natürlichen Setting
-</label>
-    <span id='result_q4a3'> </span>
-    </div> 
-
     <button type = 'button' onclick = 'displayAnswer4()' style = 'width: 100px; height: 40px; border-radius: 3px; background-color: lightblue; font-weight: 700; margin-top:5px; margin-bottom:50px'> Submit </button>
 <h2>Vergleicht man das Stresslevel von Personen, die mit dem Fahrrad angereist sind, mit denen, die mit der S-Bahn angereist sind, so ist das
 </h2> 
@@ -307,15 +277,7 @@ function displayAnswer3() {
           document.getElementById('result_q3a2').innerHTML = 'Incorrect!' 
 
         }
-        } 
-function displayAnswer4() { 
-
-        if (document.getElementById('option_q4a1').checked) {
-          document.getElementById('block_q4a1').style.background = '#FF0000'
-          document.getElementById('result_q4a1').style.color = '#FF0000'
-          document.getElementById('result_q4a1').innerHTML = 'Incorrect!' 
-
-        }
+        
         
         if (document.getElementById('option_q4a2').checked) {
           document.getElementById('block_q4a2').style.background = '#FF0000'
