@@ -52,7 +52,7 @@ var seconds = Math.floor(delta)
          "Heute beginnt das OPlympiade Trainingslager!!!";
       } else {
       document.getElementById('safeTimerDisplay').innerHTML =
-         str(-days).toString() + ". Tag des OPlympiade Trainingslagers!"; 
+         (-days).toString() + ". Tag des OPlympiade Trainingslagers!"; 
       }
           
           
@@ -61,7 +61,7 @@ var seconds = Math.floor(delta)
     if (delta % 2 < 1) {
         document.getElementById('live').innerHTML =
                 "";
-    } else
+    } else {
    document.getElementById('live').innerHTML =
                 "LIVE";
 
