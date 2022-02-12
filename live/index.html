@@ -44,9 +44,18 @@ var seconds = Math.floor(delta)
     while (seconds.length < 2) {
         seconds = "0" + seconds;
     }
-
+      if (days > 0){
      document.getElementById('safeTimerDisplay').innerHTML =
          days + " Tage bis zum OPlympiade Trainingslager.";
+      } else if (days == 0){
+     document.getElementById('safeTimerDisplay').innerHTML =
+         "Heute ist die OPlympiade!!!";
+      } else {
+      document.getElementById('safeTimerDisplay').innerHTML =
+         days + ". Tag der OPlympiade!";
+      }
+          
+          
 
 
     if (delta % 2 < 1) {
