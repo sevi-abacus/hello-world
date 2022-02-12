@@ -24,7 +24,7 @@
     var d = new Date();
     var ms_now = d.getTime();
         // get total seconds between the times
-    var delta = date_future - ms_now / 1000;
+    var delta = (date_future - ms_now) / 1000;
 
 // calculate (and subtract) whole days
 var days = Math.floor(delta / 86400);
