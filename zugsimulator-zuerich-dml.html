@@ -1,11 +1,11 @@
 <!DOCTYPE html> 
 <html lang="en">
 <head>
-  <title>Zugsimulator Zürich</title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <meta charset='utf-8' />
-  <meta name="author" content="Severin Spörri">
-  <meta keywords="Zugsimulator Zürcher S Bahn Durchmesserlinie">
+    <title>Zugsimulator Zürich</title>
+    <link rel="shortcut icon" href="files/favicon.ico" type="image/x-icon">
+    <meta charset='utf-8' />
+    <meta name="author" content="Severin Spörri">
+    <meta keywords="Zugsimulator Zürcher S Bahn Durchmesserlinie">
   <style>
       body{
           font-family: "Helvetica";
@@ -29,7 +29,7 @@ preselection, or define yourself (with other variables adapting automatically).
 <div id="traindriving">
 <video id="myVideo" width=100% autoplay>
   <!-- muted: <video id="myVideo" width=100% autoplay muted>  -->
-  <source src="durchmesserlinie_compressed.mp4" type="video/mp4">  <!-- copyright des videos: https://www.youtube.com/user/TrainspotterVideos -->
+  <source src="files/durchmesserlinie.mp4" type="video/mp4">  <!-- copyright des videos: https://www.youtube.com/user/TrainspotterVideos -->
   Your browser does not support HTML video.
 </video>
 <script>
@@ -42,6 +42,7 @@ preselection, or define yourself (with other variables adapting automatically).
 <h1 style="position:absolute;right:10%;bottom:50%;z-index:100;color:black;background-color:white" id="meter">0m</h1>
 <h1 style="position:absolute;right:10%;top:20%;z-index:100;color:white;background-color:red" id="maxspeed">0 km/h</h1>
 <!-- <h1 style="position:absolute;right:10%;bottom:10%;z-index:100;color:#004" id="state">N</h1> -->
+    <button style="position:absolute;left:2%;bottom:2%;z-index:100;color:#fff;background-color:rgba(0,0,0,0.1); outline-color:#000;height:44%" onclick="buttonHandler('s')">Gear Down</button>
 <h1 style="position:absolute;left:10%;bottom:10%;z-index:100;color:#f00" id="0">EMERGENCY BRAKE</h1>
 <h1 style="position:absolute;left:10%;bottom:20%;z-index:100;color:#ff0" id="1">B2</h1>
 <h1 style="position:absolute;left:10%;bottom:30%;z-index:100;color:#ff0" id="2">B1</h1>
@@ -49,6 +50,7 @@ preselection, or define yourself (with other variables adapting automatically).
 <h1 style="position:absolute;left:10%;bottom:50%;z-index:100;color:#6f6" id="4">A1</h1>
 <h1 style="position:absolute;left:10%;bottom:60%;z-index:100;color:#6f6" id="5">A2</h1>
 <h1 style="position:absolute;left:10%;bottom:70%;z-index:100;color:#6f6" id="6">A3</h1>
+    <button style="position:absolute;left:2%;top:2%;z-index:100;color:#fff;background-color:rgba(0,0,0,0.1); outline-color:#000;height:44%" onclick="buttonHandler('w')">Gear Up</button>
     <!-- <h1 style='position:absolute; left:30%; top:40%;"' id="command"></h1> --> <!-- // todo: centre and add variable and background color. press w to acclereate. or should we put this were meters at? -->
 </div>
 
@@ -155,6 +157,29 @@ schalten();
             schalten();
 
             }
+
+function buttonHandler(key) {
+            if (key == 'w'){
+              stick = Math.min(stick + 1, 6);
+            }
+
+            if (key == 's'){
+              stick = Math.max(stick - 1, 0);
+
+            }
+
+            if (gameover){
+              stick = 0
+                if (event.key == 'r'){
+                    location.reload();
+                }
+            }
+            schalten();
+
+            }
+
+
+
 
 
    document.addEventListener('keydown', (e) => {   // NICE!
