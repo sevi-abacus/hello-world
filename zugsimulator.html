@@ -431,7 +431,16 @@ function getDistance(){  // main loop
     document.getElementById("tachometer").style.color = '#fff';
   }
   if (gameover){
-    document.getElementById("meter").innerHTML = "GAME OVER - press R to reload";
+      if (isMobile){
+          document.getElementById("meter").innerHTML = "GAME OVER - double tap the screen to return";
+          document.addEventListener('dbclick', (e) => {
+            if (gameover) {
+                buttonHandler('r');
+            }
+            });
+      } else {
+          document.getElementById("meter").innerHTML = "GAME OVER - press R to reload";
+      }
   }
   document.getElementById("maxspeed").innerHTML = lower[2] + " km/h";
   currentmaxspeed = lower[2];
