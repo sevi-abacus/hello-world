@@ -21,13 +21,6 @@
     margin: 2vh;
   }
 
-.vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
 </style>
 
 
@@ -38,7 +31,7 @@ and learn from somewhere how motors accelerate and use energy at different speed
 preselection, or define yourself (with other variables adapting automatically).
  finally, we would need to give the big trains more money, since they also need more energy (or tell them amount of passengers and let them determine number of carts
  (maybe randomness and maybe even depending on last performance with time and breaking and empty seats, or given scenarios) -->
-<div id="traindriving">  <!-- class="vertical-center">  -->
+<div id="traindriving">
 <video id="myVideo" width=100% autoplay>
   <!-- muted: <video id="myVideo" width=100% autoplay muted>  -->
   <source src="durchmesserlinie_compressed.mp4" type="video/mp4">  <!-- copyright des videos: https://www.youtube.com/user/TrainspotterVideos -->
@@ -205,7 +198,7 @@ function buttonHandler(key) {
 
             if (gameover){
               stick = 0
-                if (event.key == 'r'){
+                if (key == 'r'){
                     location.reload();
                 }
             }
@@ -527,7 +520,16 @@ function hideeverythingandshowevaluation(){
   score += (20 - maxdistancefromstop);
   console.log(maxdistancefromstop);
   document.getElementById("totalScore").innerHTML = "Paycheck: " + Math.max(score, 0) + " CHF";
+  if (isMobile){
+      document.getElementById("totalScore").innerHTML += ". Double click the screen to return."
+      document.addEventListener('dbclick', (e) => {
+            if (gameover) {
+                buttonHandler('r');
+            }
+            });
 
+  }
+  gameover = true;
 }
 /*
 <h1 id="comment"></h1>
