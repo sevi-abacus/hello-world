@@ -9,8 +9,8 @@
    <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
     <!-- original import
-    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
-    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <link rel = "stylesheet" href = "https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <script src = "https://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
  -->
 
     <!-- import of leaflet stylesheet of newer version  -->
@@ -25,7 +25,7 @@
 
 
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <style>
         .sb1 {
   content: "";
@@ -183,7 +183,7 @@
                 this.colour = colour;
                 this.hotcolour = hotcolour;
 
-                // let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                // let svg = document.createElementNS("https://www.w3.org/2000/svg", "svg");
                 this.addText();
             }
 
@@ -898,7 +898,7 @@ function hideeverythingandshowevaluation() {
 
 
     // Creating a Layer object
-    let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+    let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 
     // Adding layer to the map
     map.addLayer(layer);
