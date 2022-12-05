@@ -6,10 +6,11 @@
     <meta charset='utf-8' />
     <meta name="author" content="Severin Spörri">
     <meta name="viewport" content="user-scalable=no">
-    <meta keywords="Zugsimulator Zürcher S Bahn Durchmesserlinie">
+    <meta name="keywords" content="Zugsimulator, Zürcher, S Bahn, Durchmesserlinie">
   <style>
       body{
-          font-family: "Helvetica";
+          font-family: "Helvetica", sans-serif;
+          background-color: #aaa;
       }
   button{
     width: 50%;
@@ -30,7 +31,7 @@ preselection, or define yourself (with other variables adapting automatically).
 <div id="traindriving">
 <video id="myVideo" width=100% autoplay>
   <!-- muted: <video id="myVideo" width=100% autoplay muted>  -->
-  <source src="durchmesserlinie_compressed.mp4" type="video/mp4">  <!-- copyright des videos: https://www.youtube.com/user/TrainspotterVideos -->
+  <source src="files/durchmesserlinie.mp4" type="video/mp4">  <!-- copyright des videos: https://www.youtube.com/user/TrainspotterVideos -->
   Your browser does not support HTML video.
 </video>
 
@@ -141,6 +142,7 @@ function schalten(){
       document.getElementById(i.toString()).style.backgroundColor = "rgb("+colors[i][0].toString()+","+colors[i][1].toString()+","+colors[i][2].toString()+")";
       if (i > 3){
           document.getElementById("3").innerHTML = "N";  // they now seem to understand the controls
+          document.getElementById("myVideo").muted = false;
       }
       if (i >= 0){
        document.getElementById(i.toString()).style.color = "black";
