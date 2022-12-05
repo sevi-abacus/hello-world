@@ -291,8 +291,15 @@ for (let i = 1; i < speedcheckpoints.length; i++) {
  */
 
 
-
-
+if (isMobile) {
+    document.addEventListener('dbclick', (e) => {
+        if (gameover) {
+            console.log("triggering buttonHandler('r')")
+            buttonHandler('r');
+        }
+    });
+    console.log('added double tap event listener');
+}
 
 
 function getDistance(){  // main loop
@@ -432,19 +439,13 @@ function getDistance(){  // main loop
   if (gameover){
       if (isMobile){
           document.getElementById("meter").innerHTML = "GAME OVER - double tap the screen to return";
-          document.addEventListener('dbclick', (e) => {
-            if (gameover) {
-                console.log("triggering buttonHandler('r')")
-                buttonHandler('r');
-            }
-            });
+
       } else {
           document.getElementById("meter").innerHTML = "GAME OVER - press R to reload";
       }
   }
   document.getElementById("maxspeed").innerHTML = lower[2] + " km/h";
   currentmaxspeed = lower[2];
-
 }
 
 
@@ -531,12 +532,6 @@ function hideeverythingandshowevaluation(){
   document.getElementById("totalScore").innerHTML = "Paycheck: " + Math.max(score, 0) + " CHF";
   if (isMobile){
       document.getElementById("totalScore").innerHTML += ". Double click the screen to return."
-      document.addEventListener('dbclick', (e) => {
-            if (gameover) {
-                buttonHandler('r');
-            }
-            });
-
   }
   gameover = true;
 }
