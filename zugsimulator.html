@@ -435,6 +435,7 @@ function getDistance(){  // main loop
           document.getElementById("meter").innerHTML = "GAME OVER - double tap the screen to return";
           document.addEventListener('dbclick', (e) => {
             if (gameover) {
+                console.log("triggering buttonHandler('r')")
                 buttonHandler('r');
             }
             });
