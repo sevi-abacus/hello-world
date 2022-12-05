@@ -882,14 +882,14 @@ function hideeverythingandshowevaluation() {
             changeMoney(-400);
             map.flyTo([24.465405024709412, 122.9717323912761], 14);
             then = Date.now();
-            tropicalsound.pause();
-            tropicalsound.play();
+            // tropicalsound.pause();
+            // tropicalsound.play();
 
       }
     }
 
     function fly_switzerland() {
-        tropicalsound.pause();
+        // tropicalsound.pause();
             map.flyTo([stations[4][1], stations[4][2]], zoomed_in_zoomlevel);
     }
 
@@ -954,7 +954,7 @@ function hideeverythingandshowevaluation() {
 
 
 
-        const tropicalsound = new Audio('files/Scandinavianz - Tropics.wav');  // author: 'Scandinavianz' on Soundcloud
+        // const tropicalsound = new Audio('files/Scandinavianz - Tropics.wav');  // author: 'Scandinavianz' on Soundcloud
         // sample code for playing audio file, delete it if you don't need it.
 
         ////////////////////////////////////////////////////////////////////////////////////
@@ -968,6 +968,7 @@ function hideeverythingandshowevaluation() {
         var active = false;
 
         /*---- The following are for connecting the eye tracker with this web page ----*/
+	/*
         var webSocket = new WebSocket("ws://" + host + "/" + pathname +"/"+ "demo");
         webSocket.onopen = function(message) {
             processOpen(message);
@@ -981,7 +982,7 @@ function hideeverythingandshowevaluation() {
         webSocket.onmessage = function(message) {
             processMessage(message);
         };
-
+	*/
         function processOpen(message) {
             console.log("connected");
 			startConnection();
