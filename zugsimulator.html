@@ -361,7 +361,6 @@ function getDistance(){  // main loop
     energy_used += (stick - 3) * (speed * mpsbaseline); // as for now, we have linear acceleration, and this is the energy input. some motor factor too? but the thing to the right doesn't make too much sense because
     // Math.max(1, Math.exp(speed-1))); exp(0) = -inf and not 1. should maybe be exp(speed) directly idk
   }
-  console.log("energy used: " + energy_used);
   if (wasdriving && (speed==0)){
     stopped_with_min = Math.min(stopped_with_min, stick);
   }
