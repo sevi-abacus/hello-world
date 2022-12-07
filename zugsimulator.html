@@ -34,12 +34,11 @@ preselection, or define yourself (with other variables adapting automatically).
 <div id="traindriving">
 <video id="myVideo" width=100% autoplay>
   <!-- muted: <video id="myVideo" width=100% autoplay muted>  -->
-  <source src="durchmesserlinie_compressed2.mp4" type="video/mp4">  <!-- copyright des videos: https://www.youtube.com/user/TrainspotterVideos -->
+  <source src="durchmesserlinie_compressed.mp4" type="video/mp4">  <!-- copyright des videos: https://www.youtube.com/user/TrainspotterVideos -->
   Your browser does not support HTML video.
 </video>
 
 <script>
-    console.log('using compressed2 as video resource');
   let startstop = 0;
   let endstop=2; // global variable
   let interval = NaN;
@@ -49,6 +48,7 @@ preselection, or define yourself (with other variables adapting automatically).
   // TODO: maybe make it non-zoomable
   let isMobile = (navigator.userAgent.match(/Android/i) ||
   navigator.userAgent.match(/iPhone/i));
+  let isiPhone = navigator.userAgent.match(/Android/i);
 
   if (isMobile){
       // TODO: fix video for mobile version (evtl w sound even);
@@ -56,11 +56,16 @@ preselection, or define yourself (with other variables adapting automatically).
       // if these things don't work, take a look at our friends who made the one i sent yannick
       console.log("This is probably a phone")
       document.getElementById("myVideo").muted = true;
+      if (isiPhone) {
+          console.log("an iPhone")
+      document.getElementById("myVideo").setAttribute("autoplay", "autoplay");
+  }
 
   }
   else {
       console.log("This is probably not a phone")
   }
+
 </script>
 <h1 style="position:absolute;right:10%;top:10%;z-index:100;color:white;background-color:black" id="tachometer">0 km/h</h1>
 <h1 style="position:absolute;right:10%;bottom:50%;z-index:100;color:black;background-color:white" id="meter">0m</h1>
