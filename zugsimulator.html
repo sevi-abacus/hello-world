@@ -13,10 +13,10 @@
           background-color: #aaa;
       }
   button{
-    width: 50%;
+    width: 50vw;
     height: 10%;
     position: relative;
-    left: 25%;
+    left: 25vw;
     padding: 5vh;
     margin: 2vh;
   }
@@ -34,11 +34,12 @@ preselection, or define yourself (with other variables adapting automatically).
 <div id="traindriving">
 <video id="myVideo" width=100% autoplay>
   <!-- muted: <video id="myVideo" width=100% autoplay muted>  -->
-  <source src="durchmesserlinie_compressed.mp4" type="video/mp4">  <!-- copyright des videos: https://www.youtube.com/user/TrainspotterVideos -->
+  <source src="durchmesserlinie_compressed2.mp4" type="video/mp4">  <!-- copyright des videos: https://www.youtube.com/user/TrainspotterVideos -->
   Your browser does not support HTML video.
 </video>
 
 <script>
+    // console.log(document.getElementById("myVideo").source.src);
   let startstop = 0;
   let endstop=2; // global variable
   let interval = NaN;
@@ -296,8 +297,26 @@ for (let i = 1; i < speedcheckpoints.length; i++) {
 
  */
 
-
+let lastClick = 0;
 if (isMobile) {
+document.addEventListener('touchstart', function(e) {
+  // e.preventDefault(); // to disable browser default zoom on double tap
+  let date = new Date();
+  let time = date.getTime();
+  const time_between_taps = 200; // 200ms
+  if (time - lastClick < time_between_taps) {
+      // do stuff
+      if (gameover) {
+          console.log("triggering buttonHandler('r')")
+          buttonHandler('r');
+          console.log("done");
+      }
+  }
+  lastClick = time;
+});
+    
+    
+    
     document.addEventListener('dbclick', (e) => {
         if (gameover) {
             console.log("triggering buttonHandler('r')")
