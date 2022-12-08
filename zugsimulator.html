@@ -32,7 +32,7 @@ preselection, or define yourself (with other variables adapting automatically).
  finally, we would need to give the big trains more money, since they also need more energy (or tell them amount of passengers and let them determine number of carts
  (maybe randomness and maybe even depending on last performance with time and breaking and empty seats, or given scenarios) -->
 <div id="traindriving">
-<video id="myVideo" width=100% autoplay playsinline muted>
+<video id="myVideo" width=100% autoplay playsinline muted preload="None">
   <!-- muted: <video id="myVideo" width=100% autoplay muted>  -->
   <source src="durchmesserlinie_compressed.mp4" type="video/mp4">  <!-- copyright des videos: https://www.youtube.com/user/TrainspotterVideos -->
   Your browser does not support HTML video.
@@ -49,7 +49,9 @@ preselection, or define yourself (with other variables adapting automatically).
   // TODO: maybe make it non-zoomable
   let isMobile = (navigator.userAgent.match(/Android/i) ||
   navigator.userAgent.match(/iPhone/i));
-  let isiPhone = navigator.userAgent.match(/Android/i);
+  let isiPhone = navigator.userAgent.match(/iPhone/i);
+  let isSafari = (navigator.userAgent.toLowerCase().indexOf('safari/') > -1);
+  console.log('we think that safari: ' + isSafari.toString());
   let vid = document.getElementById("myVideo");
   vid.controls = false;
 
@@ -92,8 +94,8 @@ preselection, or define yourself (with other variables adapting automatically).
 <div id="classicselection">
     <center><h1>Which section would you like to drive?</h1></center>
     <br>
+    <button onclick="set_game(1, 2, 5)">Zürich HB - Altstetten</button>
   <button onclick="set_game(0, 1, 5)">Oerlikon - Zürich HB</button>
-  <button onclick="set_game(1, 2, 5)">Zürich HB - Altstetten</button>
   <button onclick="set_game(0, 2, 11)">Oerlikon - Altstetten</button>
 
 </div>
