@@ -21,6 +21,7 @@
     margin: 2vh;
   }
 
+
 </style>
 
 
@@ -39,6 +40,8 @@ preselection, or define yourself (with other variables adapting automatically).
 </video>
 
 <script>
+    
+
     // console.log(document.getElementById("myVideo").source.src);
   let startstop = 0;
   let endstop=2; // global variable
@@ -50,6 +53,10 @@ preselection, or define yourself (with other variables adapting automatically).
   let isMobile = (navigator.userAgent.match(/Android/i) ||
   navigator.userAgent.match(/iPhone/i));
   let isiPhone = navigator.userAgent.match(/Android/i);
+  document.getElementById('myVideo').controls = false;
+  document.getElementById('myVideo').setAttribute(controls, false);
+
+
 
   if (isMobile){
       // TODO: fix video for mobile version (evtl w sound even);
@@ -105,8 +112,8 @@ preselection, or define yourself (with other variables adapting automatically).
 </body>
 <script>
     if (isMobile){
-        document.getElementById("geardownbutton").style.width = "96%";
-        document.getElementById("gearupbutton").style.width = "90%";
+        document.getElementById("geardownbutton").style.width = "100%";
+        document.getElementById("gearupbutton").style.width = "100%";
         document.getElementById("3").innerHTML = "Press Upper Half of Screen to accelerate and Lower Half to brake";
     } else {
          document.getElementById("geardownbutton").style.display = "None";
