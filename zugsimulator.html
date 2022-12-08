@@ -32,7 +32,7 @@ preselection, or define yourself (with other variables adapting automatically).
  finally, we would need to give the big trains more money, since they also need more energy (or tell them amount of passengers and let them determine number of carts
  (maybe randomness and maybe even depending on last performance with time and breaking and empty seats, or given scenarios) -->
 <div id="traindriving">
-<video id="myVideo" width=100% autoplay playsinline>
+<video id="myVideo" width=100% autoplay playsinline muted>
   <!-- muted: <video id="myVideo" width=100% autoplay muted>  -->
   <source src="durchmesserlinie_compressed.mp4" type="video/mp4">  <!-- copyright des videos: https://www.youtube.com/user/TrainspotterVideos -->
   Your browser does not support HTML video.
@@ -50,18 +50,19 @@ preselection, or define yourself (with other variables adapting automatically).
   let isMobile = (navigator.userAgent.match(/Android/i) ||
   navigator.userAgent.match(/iPhone/i));
   let isiPhone = navigator.userAgent.match(/Android/i);
-  document.getElementById('myVideo').controls = false;
+  let vid = document.getElementById("myVideo");
+  vid.controls = false;
 
   if (isMobile){
       // TODO: fix video for mobile version (evtl w sound even);
       // use big buttons
       // if these things don't work, take a look at our friends who made the one i sent yannick
       console.log("This is probably a phone")
-      document.getElementById("myVideo").muted = true;
+      vid.muted = true;
       if (isiPhone) {
           console.log("an iPhone")
-      document.getElementById("myVideo").setAttribute("autoplay", "autoplay");
-          document.getElementById("myVideo").source = 'videoplayback.rpg';
+      // vid.setAttribute("autoplay", "autoplay");
+         // vid.source = 'videoplayback.rpg';
           // document.getElementById('myVideo').playsinline = true;
 
   }
@@ -118,7 +119,7 @@ let msperloop = 15;
 let speed = 0;
 let stick = 3;
 
-let vid = document.getElementById("myVideo");
+
 vid.playbackRate = speed;
 let gameover = false;
 let gameoverreason = "you were too fast" // we want this?
@@ -156,7 +157,7 @@ function schalten(){
       document.getElementById(i.toString()).style.backgroundColor = "rgb("+colors[i][0].toString()+","+colors[i][1].toString()+","+colors[i][2].toString()+")";
       if (i > 3){
           document.getElementById("3").innerHTML = "N";  // they now seem to understand the controls
-          document.getElementById("myVideo").muted = false;
+          vid.muted = false;
       }
       if (i >= 0){
        document.getElementById(i.toString()).style.color = "black";
