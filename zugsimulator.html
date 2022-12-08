@@ -40,7 +40,7 @@ preselection, or define yourself (with other variables adapting automatically).
 </video>
 
 <script>
-    
+
 
     // console.log(document.getElementById("myVideo").source.src);
   let startstop = 0;
@@ -67,6 +67,7 @@ preselection, or define yourself (with other variables adapting automatically).
       if (isiPhone) {
           console.log("an iPhone")
       document.getElementById("myVideo").setAttribute("autoplay", "autoplay");
+          document.getElementById("myVideo").source = 'videoplayback.rpg';
           // document.getElementById('myVideo').playsinline = true;
 
   }
