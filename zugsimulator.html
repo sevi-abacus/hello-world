@@ -21,7 +21,6 @@
     margin: 2vh;
   }
 
-
 </style>
 
 
@@ -33,16 +32,14 @@ preselection, or define yourself (with other variables adapting automatically).
  finally, we would need to give the big trains more money, since they also need more energy (or tell them amount of passengers and let them determine number of carts
  (maybe randomness and maybe even depending on last performance with time and breaking and empty seats, or given scenarios) -->
 <div id="traindriving">
-<video id="myVideo" width=100% autoplay playsinline>
+<video id="myVideo" width=100% autoplay>
   <!-- muted: <video id="myVideo" width=100% autoplay muted>  -->
   <source src="durchmesserlinie_compressed.mp4" type="video/mp4">  <!-- copyright des videos: https://www.youtube.com/user/TrainspotterVideos -->
   Your browser does not support HTML video.
 </video>
 
 <script>
-
-    console.log(document.getElementById("myVideo").source.src);
-    console.log("Let's start")
+    // console.log(document.getElementById("myVideo").source.src);
   let startstop = 0;
   let endstop=2; // global variable
   let interval = NaN;
@@ -53,7 +50,6 @@ preselection, or define yourself (with other variables adapting automatically).
   let isMobile = (navigator.userAgent.match(/Android/i) ||
   navigator.userAgent.match(/iPhone/i));
   let isiPhone = navigator.userAgent.match(/Android/i);
-  document.getElementById('myVideo').controls = false;
 
   if (isMobile){
       // TODO: fix video for mobile version (evtl w sound even);
@@ -64,9 +60,6 @@ preselection, or define yourself (with other variables adapting automatically).
       if (isiPhone) {
           console.log("an iPhone")
       document.getElementById("myVideo").setAttribute("autoplay", "autoplay");
-          document.getElementById("myVideo").source = 'videoplayback.rpg';
-          // document.getElementById('myVideo').playsinline = true;
-
   }
 
   }
@@ -79,7 +72,7 @@ preselection, or define yourself (with other variables adapting automatically).
 <h1 style="position:absolute;right:10%;bottom:50%;z-index:100;color:black;background-color:white" id="meter">0m</h1>
 <h1 style="position:absolute;right:10%;top:20%;z-index:100;color:white;background-color:red" id="maxspeed">0 km/h</h1>
 <!-- <h1 style="position:absolute;right:10%;bottom:10%;z-index:100;color:#004" id="state">N</h1> -->
-    <button style="position:absolute;left:0%;bottom:2%;z-index:100;color:#fff;background-color:rgba(0,0,0,0.1); outline-color:#000;height:44%;margin-left:0;padding-left:0" onclick="buttonHandler('s')" id="geardownbutton">Gear Down</button>
+    <button style="position:absolute;left:2%;bottom:2%;z-index:100;color:#fff;background-color:rgba(0,0,0,0.1); outline-color:#000;height:44%" onclick="buttonHandler('s')" id="geardownbutton">Gear Down</button>
 <h1 style="position:absolute;left:10%;bottom:10%;z-index:100;color:#f00" id="0">EMERGENCY BRAKE</h1>
 <h1 style="position:absolute;left:10%;bottom:20%;z-index:100;color:#ff0" id="1">B2</h1>
 <h1 style="position:absolute;left:10%;bottom:30%;z-index:100;color:#ff0" id="2">B1</h1>
@@ -87,7 +80,7 @@ preselection, or define yourself (with other variables adapting automatically).
 <h1 style="position:absolute;left:10%;bottom:50%;z-index:100;color:#6f6" id="4">A1</h1>
 <h1 style="position:absolute;left:10%;bottom:60%;z-index:100;color:#6f6" id="5">A2</h1>
 <h1 style="position:absolute;left:10%;bottom:70%;z-index:100;color:#6f6" id="6">A3</h1>
-    <button style="position:absolute;left:0%;top:2%;z-index:100;color:#fff;background-color:rgba(0,0,0,0.1); outline-color:#000;height:44%;margin-left:0;padding-left:0" onclick="buttonHandler('w')" id="gearupbutton">Gear Up</button>
+    <button style="position:absolute;left:2%;top:2%;z-index:100;color:#fff;background-color:rgba(0,0,0,0.1); outline-color:#000;height:44%" onclick="buttonHandler('w')" id="gearupbutton">Gear Up</button>
     <!-- <h1 style='position:absolute; left:30%; top:40%;"' id="command"></h1> --> <!-- // todo: centre and add variable and background color. press w to acclereate. or should we put this were meters at? -->
 </div>
 
@@ -110,8 +103,8 @@ preselection, or define yourself (with other variables adapting automatically).
 </body>
 <script>
     if (isMobile){
-        document.getElementById("geardownbutton").style.width = "100%";
-        document.getElementById("gearupbutton").style.width = "100%";
+        document.getElementById("geardownbutton").style.width = "96%";
+        document.getElementById("gearupbutton").style.width = "90%";
         document.getElementById("3").innerHTML = "Press Upper Half of Screen to accelerate and Lower Half to brake";
     } else {
          document.getElementById("geardownbutton").style.display = "None";
