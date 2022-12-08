@@ -41,8 +41,8 @@ preselection, or define yourself (with other variables adapting automatically).
 
 <script>
 
-
-    // console.log(document.getElementById("myVideo").source.src);
+    console.log(document.getElementById("myVideo").source.src);
+    console.log("Let's start")
   let startstop = 0;
   let endstop=2; // global variable
   let interval = NaN;
@@ -54,9 +54,6 @@ preselection, or define yourself (with other variables adapting automatically).
   navigator.userAgent.match(/iPhone/i));
   let isiPhone = navigator.userAgent.match(/Android/i);
   document.getElementById('myVideo').controls = false;
-  document.getElementById('myVideo').setAttribute(controls, false);
-
-
 
   if (isMobile){
       // TODO: fix video for mobile version (evtl w sound even);
