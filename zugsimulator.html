@@ -33,7 +33,7 @@ preselection, or define yourself (with other variables adapting automatically).
  (maybe randomness and maybe even depending on last performance with time and breaking and empty seats, or given scenarios) -->
 <div id="traindriving">
 <!-- for apple maybe (not working either): <video id="myVideo" width="100%" playsinline muted preload="None"> -->
-    <video id="myVideo" width=100% autoplay playsinline muted> 
+    <video id="myVideo" width=100% autoplay playsinline muted>
   <!-- muted: <video id="myVideo" width=100% autoplay muted>  -->
   <source src="durchmesserlinie_compressed.mp4" type="video/mp4">  <!-- copyright des videos: https://www.youtube.com/user/TrainspotterVideos -->
   Your browser does not support HTML video.
@@ -308,7 +308,7 @@ for (let i = 1; i < speedcheckpoints.length; i++) {
 let lastClick = 0;
 if (isMobile) {
 document.addEventListener('touchstart', function(e) {
-  // e.preventDefault(); // to disable browser default zoom on double tap
+  e.preventDefault(); // to disable browser default zoom on double tap
   let date = new Date();
   let time = date.getTime();
   const time_between_taps = 200; // 200ms
