@@ -1,12 +1,12 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Zugsimulator - https://railway-games.cyou</title>
+    <title>Zugsimulator Zürich</title>
     <link rel="shortcut icon" href="files/favicon.ico" type="image/x-icon">
     <meta charset='utf-8' />
     <meta name="author" content="Severin Spörri">
     <meta name="viewport" content="user-scalable=no">
-    <meta name="keywords" content="Zugsimulator, Zürcher, S Bahn, Durchmesserlinie, Schweiz">
+    <meta name="keywords" content="Zugsimulator, Zürcher, S Bahn, Durchmesserlinie">
   <style>
       body{
           font-family: "Helvetica", sans-serif;
@@ -28,12 +28,42 @@
 <body>
 <div id="train-selection"></div>
 <div id="traindriving">
+
     <video id="myVideo" width=100% autoplay playsinline muted>
-  <source src="https://railway-games.cyou/durchmesserlinie_compressed.mp4" type="video/mp4"> 
+
+  <source src="durchmesserlinie_compressed.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 <script>
-function _0x5239(){const _0x4c4d2c=['match','59224skNqDK','safari/','5xlqvgc','includes','pause','userAgent','1918914TpokjR','7487930vdnVoP','toLowerCase','357154mhffuU','2033656gureNk','2ULyryo','956808rBWHjw','getElementById','Mac','play','9SxgOZW','781736RVxUBY','controls'];_0x5239=function(){return _0x4c4d2c;};return _0x5239();}const _0x120b13=_0x190a;(function(_0x315abf,_0x4da0ce){const _0x491c3e=_0x190a,_0x358604=_0x315abf();while(!![]){try{const _0x1312c3=parseInt(_0x491c3e(0x196))/0x1*(parseInt(_0x491c3e(0x18b))/0x2)+-parseInt(_0x491c3e(0x197))/0x3+-parseInt(_0x491c3e(0x19c))/0x4+parseInt(_0x491c3e(0x18d))/0x5*(-parseInt(_0x491c3e(0x191))/0x6)+-parseInt(_0x491c3e(0x194))/0x7+-parseInt(_0x491c3e(0x195))/0x8*(-parseInt(_0x491c3e(0x19b))/0x9)+parseInt(_0x491c3e(0x192))/0xa;if(_0x1312c3===_0x4da0ce)break;else _0x358604['push'](_0x358604['shift']());}catch(_0x585f1a){_0x358604['push'](_0x358604['shift']());}}}(_0x5239,0x2b375));let startstop=0x0,endstop=0x2,interval=NaN,countdown=0x0,isMobile=navigator[_0x120b13(0x190)][_0x120b13(0x18a)](/Android/i)||navigator[_0x120b13(0x190)][_0x120b13(0x18a)](/iPhone/i),isiPhone=navigator[_0x120b13(0x190)][_0x120b13(0x18a)](/iPhone/i),isSafari=navigator[_0x120b13(0x190)][_0x120b13(0x193)]()['indexOf'](_0x120b13(0x18c))>-0x1,isMac=navigator['platform'][_0x120b13(0x18e)](_0x120b13(0x199)),isApple=isiPhone||isSafari||isMac,vid=document[_0x120b13(0x198)]('myVideo');vid[_0x120b13(0x189)]=![];isSafari&&vid[_0x120b13(0x18f)]();let vid_is_initialised=![];function _0x190a(_0x3b3ac7,_0x22cd1c){const _0x523910=_0x5239();return _0x190a=function(_0x190afe,_0x4b2e20){_0x190afe=_0x190afe-0x189;let _0x4e322b=_0x523910[_0x190afe];return _0x4e322b;},_0x190a(_0x3b3ac7,_0x22cd1c);}function initialise_vid(){const _0x4d2013=_0x120b13;!isApple&&(vid[_0x4d2013(0x19a)](),vid['muted']=![]),vid_is_initialised=!![];}
+
+  let startstop = 0;
+  let endstop=2;
+  let interval = NaN;
+  let countdown = 0;
+
+  let isMobile = (navigator.userAgent.match(/Android/i) ||
+  navigator.userAgent.match(/iPhone/i));
+  let isiPhone = navigator.userAgent.match(/iPhone/i);
+  let isSafari = (navigator.userAgent.toLowerCase().indexOf('safari/') > -1);
+  let isMac = navigator.platform.includes('Mac');
+  let isApple = (isiPhone || isSafari || isMac);
+  let vid = document.getElementById("myVideo");
+  vid.controls = false;
+  if (isSafari){
+  vid.pause();
+  }
+
+  let vid_is_initialised = false;
+  function initialise_vid(){
+
+      if (!isApple) {
+          vid.play()
+        vid.muted = false;
+      }
+
+  vid_is_initialised = true;
+  }
+
 </script>
 <h1 style="position:absolute;right:10%;top:10%;z-index:100;color:white;background-color:black" id="tachometer">0 km/h</h1>
 <h1 style="position:absolute;right:10%;bottom:50%;z-index:100;color:black;background-color:white" id="meter">0m</h1>
@@ -47,7 +77,7 @@ function _0x5239(){const _0x4c4d2c=['match','59224skNqDK','safari/','5xlqvgc','i
 <h1 style="position:absolute;left:10%;bottom:60%;z-index:100;color:#6f6" id="5">A2</h1>
 <h1 style="position:absolute;left:10%;bottom:70%;z-index:100;color:#6f6" id="6">A3</h1>
     <button style="position:absolute;left:0%;top:2%;z-index:100;color:#fff;background-color:rgba(0,0,0,0.1); outline-color:#000;height:44%;margin-left:0;padding-left:0" onclick="buttonHandler('w')" id="gearupbutton">Gear Up</button>
-</div>
+   </div>
 
 <div id="classicselection">
     <center><h1>Which section would you like to drive?</h1></center>
@@ -56,6 +86,8 @@ function _0x5239(){const _0x4c4d2c=['match','59224skNqDK','safari/','5xlqvgc','i
   <button id="oerlikon-hb" onclick="set_game(0, 1, 5)">Oerlikon - Zürich HB</button>
   <button id="oerlikon-altstetten" onclick="set_game(0, 2, 11)">Oerlikon - Altstetten</button>
     <button id="sg" onclick="set_sg_game(2)">St. Gallen Bruggen - St. Gallen Winkeln</button>
+
+
 </div>
 <h1 id="comment"></h1>
 <h1 id="timeNeeded"></h1>
@@ -64,8 +96,443 @@ function _0x5239(){const _0x4c4d2c=['match','59224skNqDK','safari/','5xlqvgc','i
 <h1 id="loosenBrakesAtHalt"></h1>
 <h1 id="distance stop"></h1>
 <h1 id="totalScore"></h1>
+
 </body>
 <script>
-    const _0x414aec=_0x2d84;(function(_0x60341d,_0x1ec4f4){const _0x32c821=_0x2d84,_0x2513d1=_0x60341d();while(!![]){try{const _0x9dfd27=-parseInt(_0x32c821(0x206))/0x1*(parseInt(_0x32c821(0x1d3))/0x2)+-parseInt(_0x32c821(0x1ef))/0x3*(parseInt(_0x32c821(0x1e3))/0x4)+parseInt(_0x32c821(0x1f5))/0x5+-parseInt(_0x32c821(0x1e7))/0x6+-parseInt(_0x32c821(0x216))/0x7+parseInt(_0x32c821(0x20c))/0x8*(-parseInt(_0x32c821(0x1de))/0x9)+parseInt(_0x32c821(0x1ec))/0xa*(parseInt(_0x32c821(0x214))/0xb);if(_0x9dfd27===_0x1ec4f4)break;else _0x2513d1['push'](_0x2513d1['shift']());}catch(_0x2ed4ed){_0x2513d1['push'](_0x2513d1['shift']());}}}(_0x5aac,0xf178e));isMobile?(document[_0x414aec(0x218)](_0x414aec(0x1d6))[_0x414aec(0x1d5)][_0x414aec(0x1fd)]=_0x414aec(0x1fe),document[_0x414aec(0x218)]('gearupbutton')['style'][_0x414aec(0x1fd)]=_0x414aec(0x1fe),document[_0x414aec(0x218)]('3')[_0x414aec(0x1df)]=_0x414aec(0x21a)):(document[_0x414aec(0x218)]('geardownbutton')[_0x414aec(0x1d5)][_0x414aec(0x22d)]=_0x414aec(0x20a),document['getElementById'](_0x414aec(0x1e5))[_0x414aec(0x1d5)]['display']=_0x414aec(0x20a));let msperloop=0x28;if(isApple){msperloop=0x28;for(let classic in[_0x414aec(0x21d),'oerlikon-hb','oerlikon-altstetten']){}}let speed=0x0,stick=0x2;vid[_0x414aec(0x1e1)]=0x0;let gameover=![],gameoverreason=_0x414aec(0x1fa),controlstrings=[_0x414aec(0x1f2),'B2','B1','N','A1','A2','A3'];const formatter=new Intl['NumberFormat'](_0x414aec(0x22e),{'style':_0x414aec(0x21c),'signDisplay':_0x414aec(0x228)});let then=Date[_0x414aec(0x219)](),seconds_with_emergeny_brake=0x0,stopped_with_min=0x4,overspeedlimit=0x0,maxdistancefromstop=0x0,energy_used=0x0,colors=[[0xff,0x0,0x0],[0xff,0xff,0x0],[0xff,0xff,0x0],[0xff,0xff,0xff],[0x64,0xfa,0x64],[0x64,0xfa,0x64],[0x64,0xfa,0x64]];function _0x5aac(){const _0x4b15c3=['2731362xylmMh','Speeding\x20(','src','In\x20','emergency\x20brakes','30110MsZKAJ','green','key','568419TiLxac','m:\x20','color','EMERGENCY\x20BRAKE','backgroundColor','game\x20over\x20because\x20overrun','7091540xWpPRq','Hard\x20Braking\x20at\x20Stop\x20(with\x20','block','push','comment','you\x20were\x20too\x20fast','rgb(','classicselection','width','100%','overSpeedLimit','m):\x20+','):\x20','min','bruggen_winkeln.mp4','timeNeeded','\x20km/h','1xXnpGl','ArrowUp','paused','Smooth\x20Stop\x20(with\x20','None','game\x20over\x20because\x20too\x20fast','8CrPpLH','toString','ceil','Paycheck:\x20','format','dbclick','loosenBrakesAtHalt','tachometer','16379fmeoOA','keydown','13823936JPxljn','pause','getElementById','now','Press\x20Upper\x20Half\x20of\x20Screen\x20to\x20accelerate\x20and\x20Lower\x20Half\x20to\x20brake','Stopping\x20precision\x20(','decimal','hb-altstetten','max','\x20km/h):\x20','Energy\x20cost:\x20-','volume','Time\x20(','addEventListener','floor','reload','white','m:\x20STOP','always','repeat','distance\x20stop','currentTime','maxspeed','display','en-GB','traindriving','autoplay','log','meter','touchstart','.\x20Press\x20the\x20\x27R\x27\x20key\x20to\x20return.','609738tQdTpe','https://railway-games.cyou/bruggen_winkeln.mp4','style','geardownbutton','getTime','totalScore','.\x20Double\x20click\x20the\x20screen\x20to\x20return.','indexOf','none','#ff0','preventDefault','14483286uGVykL','innerHTML','ArrowDown','playbackRate','round','12QdVVdP','\x20CHF','gearupbutton','GAME\x20OVER\x20-\x20press\x20R\x20to\x20reload'];_0x5aac=function(){return _0x4b15c3;};return _0x5aac();}function schalten(){const _0x13c7db=_0x414aec;for(let _0x30279d=0x0;_0x30279d<0x7;_0x30279d++){_0x30279d==stick?(document[_0x13c7db(0x218)](_0x30279d[_0x13c7db(0x20d)]())[_0x13c7db(0x1d5)][_0x13c7db(0x1f3)]=_0x13c7db(0x1fb)+colors[_0x30279d][0x0]['toString']()+','+colors[_0x30279d][0x1][_0x13c7db(0x20d)]()+','+colors[_0x30279d][0x2][_0x13c7db(0x20d)]()+')',_0x30279d>0x3&&(document[_0x13c7db(0x218)]('2')[_0x13c7db(0x1df)]='B1'),_0x30279d>=0x0?document[_0x13c7db(0x218)](_0x30279d['toString']())[_0x13c7db(0x1d5)][_0x13c7db(0x1f1)]='black':document['getElementById'](_0x30279d[_0x13c7db(0x20d)]())['style'][_0x13c7db(0x1f1)]=_0x13c7db(0x226)):(document['getElementById'](_0x30279d[_0x13c7db(0x20d)]())[_0x13c7db(0x1d5)][_0x13c7db(0x1f3)]=null,document['getElementById'](_0x30279d['toString']())['style']['color']='rgb('+colors[_0x30279d][0x0]['toString']()+','+colors[_0x30279d][0x1][_0x13c7db(0x20d)]()+','+colors[_0x30279d][0x2][_0x13c7db(0x20d)]()+')');}}schalten();function KeyDownHandler(_0x4ec874){const _0x6fa183=_0x414aec;buttonHandler(_0x4ec874[_0x6fa183(0x1ee)]);}function buttonHandler(_0x337e49){const _0x5d2d42=_0x414aec;(_0x337e49=='w'||_0x337e49==_0x5d2d42(0x207))&&(stick=Math[_0x5d2d42(0x202)](stick+0x1,0x6),!vid_is_initialised&&initialise_vid()),(_0x337e49=='s'||_0x337e49==_0x5d2d42(0x1e0))&&(stick=Math[_0x5d2d42(0x21e)](stick-0x1,0x0)),gameover&&(stick=0x0,_0x337e49=='r'&&location[_0x5d2d42(0x225)]()),schalten();}document['addEventListener'](_0x414aec(0x215),_0x3f2d86=>{const _0x447f6c=_0x414aec;!_0x3f2d86[_0x447f6c(0x229)]&&KeyDownHandler(_0x3f2d86);});let distance_s=0x0,distance_m=0x0,distance_to_higher=0x0,distance_to_next_change=0x0,korrekturfaktor=0x1,baselinespeed=0x73,mpsbaseline=baselinespeed/3.6,currentmaxspeed=0x0;speedcheckpoints=[],speedcheckpoints[_0x414aec(0x1f8)]([0x0,0.9,0x50,0x1ba]),speedcheckpoints[_0x414aec(0x1f8)]([0x14,0.9,0x78,0x1ba]),speedcheckpoints['push']([0xc8,0.8,0x50,0x186]),speedcheckpoints[_0x414aec(0x1f8)]([0x104,0.0625,0x0,0x186]),speedcheckpoints[_0x414aec(0x1f8)]([0x128,0.0625,0x50,0x186]),speedcheckpoints[_0x414aec(0x1f8)]([0x13a,0.125,0x50,0x186]),speedcheckpoints['push']([0x154,0x1,0x78,0x195]),speedcheckpoints[_0x414aec(0x1f8)]([0x174,0x1,0x78,0x1a8]),speedcheckpoints[_0x414aec(0x1f8)]([0x176,0x1,0x78,0x1a8]),speedcheckpoints['push']([0x18a,0x1,0x78,0x192]),speedcheckpoints['push']([0x1b8,0x1,0x78,0x1a6]),speedcheckpoints[_0x414aec(0x1f8)]([0x1ba,0x1,0x78,0x1a6]),speedcheckpoints['push']([0x1c8,0x1,0x78,0x190]),speedcheckpoints[_0x414aec(0x1f8)]([0x1da,0x1,0x0,0x18f]),speedcheckpoints[_0x414aec(0x1f8)]([0x1e0,0x1,0x82,0x18e]);let stopped=[![],![]],gottastop=[!![],!![]],stops=[0x104,0x1da],lastClick=0x0;function _0x2d84(_0x247ab1,_0x20e5c8){const _0x5aac25=_0x5aac();return _0x2d84=function(_0x2d844c,_0xa59f48){_0x2d844c=_0x2d844c-0x1d3;let _0x5a5f7b=_0x5aac25[_0x2d844c];return _0x5a5f7b;},_0x2d84(_0x247ab1,_0x20e5c8);}isMobile&&(document['addEventListener'](_0x414aec(0x233),function(_0x311f4d){const _0x3f4683=_0x414aec;_0x311f4d[_0x3f4683(0x1dd)]();let _0x2b63e3=new Date(),_0x1b250a=_0x2b63e3[_0x3f4683(0x1d7)]();const _0x1c5649=0xc8;_0x1b250a-lastClick<_0x1c5649&&(gameover&&buttonHandler('r')),lastClick=_0x1b250a;}),document[_0x414aec(0x223)](_0x414aec(0x211),_0x1eb901=>{gameover&&buttonHandler('r');}));function getDistance(){const _0x1a594d=_0x414aec;distance_s=vid[_0x1a594d(0x22b)],distance_to_next_change=0x0,distance_m=0x0;let _0xad9e28=speedcheckpoints[0x0],_0x16e247=speedcheckpoints[0x1],_0x4fe26a=speedcheckpoints[0x1];for(let _0x3cc75f of speedcheckpoints){if(distance_s>=_0x3cc75f[0x0]||_0x3cc75f[0x2]==currentmaxspeed)distance_to_next_change+=(_0x3cc75f[0x0]-_0xad9e28[0x0])*((_0x3cc75f[0x1]+_0xad9e28[0x1])/0x2)*mpsbaseline,_0xad9e28=_0x3cc75f;else{distance_to_next_change+=(_0x3cc75f[0x0]-_0xad9e28[0x0])*((_0x3cc75f[0x1]+_0xad9e28[0x1])/0x2)*mpsbaseline,_0x4fe26a=_0x3cc75f;break;}}distance_m=0x0,_0xad9e28=speedcheckpoints[0x0];let _0x2bd81e=0x0;for(let _0x16444d of speedcheckpoints){if(distance_s>=_0x16444d[0x0])distance_m+=(_0x16444d[0x0]-_0xad9e28[0x0])*((_0x16444d[0x1]+_0xad9e28[0x1])/0x2)*mpsbaseline,distance_to_higher=distance_m,_0xad9e28=_0x16444d;else{distance_to_higher+=(_0x16444d[0x0]-_0xad9e28[0x0])*((_0x16444d[0x1]+_0xad9e28[0x1])/0x2)*mpsbaseline,_0x2bd81e=(_0x16444d[0x3]-_0xad9e28[0x3])/((_0x16444d[0x0]-_0xad9e28[0x0])*((_0x16444d[0x1]+_0xad9e28[0x1])/0x2)*mpsbaseline),_0x16e247=_0x16444d;break;}}let _0x12a8e6=(distance_s-_0xad9e28[0x0])/(_0x16e247[0x0]-_0xad9e28[0x0]),_0x1cf1d0=(0x1-_0x12a8e6)*_0xad9e28[0x1]+_0x12a8e6*_0x16e247[0x1];distance_m+=(distance_s-_0xad9e28[0x0])*((_0x1cf1d0+_0xad9e28[0x1])/0x2)*mpsbaseline;_0xad9e28[0x1]==0.0625&&_0x16e247[0x1]==0.0625&&(vid['currentTime']=_0x16e247[0x0]);let _0x2adab4=speed>0x0;speed-=speed**0x2*0.00042,speed-=0.00002,speed-=_0x2bd81e/(0x1+_0x2bd81e**0x2)**0.5*9.81*(msperloop/0x3e8)*(0x1/mpsbaseline),speed=Math['max'](0x0,speed+(stick-0x3)*(0.48*(0x1/mpsbaseline)*(msperloop/0x3e8)));if(stick==0x0||stick==0x1)energy_used-=speed*mpsbaseline;else stick==0x2?energy_used-=0.5*(speed*mpsbaseline):energy_used+=(stick-0x3)*(speed*mpsbaseline);_0x2adab4&&speed==0x0&&(stopped_with_min=Math['min'](stopped_with_min,stick));korrekturfaktor=0x1/_0x1cf1d0;isApple?(!vid[_0x1a594d(0x208)]&&vid[_0x1a594d(0x217)](),vid[_0x1a594d(0x22b)]=vid['currentTime']+msperloop/0x3e8*speed*korrekturfaktor):(vid[_0x1a594d(0x1e1)]=speed*korrekturfaktor,vid[_0x1a594d(0x221)]=Math['min'](0x1,vid[_0x1a594d(0x1e1)]**0x2));speed*baselinespeed<0x1?document[_0x1a594d(0x218)](_0x1a594d(0x213))[_0x1a594d(0x1df)]=Math[_0x1a594d(0x20e)](speed*baselinespeed)+_0x1a594d(0x205):document[_0x1a594d(0x218)](_0x1a594d(0x213))['innerHTML']=Math[_0x1a594d(0x1e2)](speed*baselinespeed)+_0x1a594d(0x205);if(_0x4fe26a[0x2]==0x0){document[_0x1a594d(0x218)](_0x1a594d(0x232))[_0x1a594d(0x1df)]=_0x1a594d(0x1ea)+Math[_0x1a594d(0x224)](distance_to_next_change-(distance_m+0x14))+_0x1a594d(0x227);if(distance_to_next_change-distance_m<0x28){document[_0x1a594d(0x218)](_0x1a594d(0x232))[_0x1a594d(0x1d5)]['backgroundColor']=_0x1a594d(0x1ed);if(speed==0x0){maxdistancefromstop=Math[_0x1a594d(0x21e)](maxdistancefromstop,Math['abs'](Math[_0x1a594d(0x224)](distance_to_next_change-(distance_m+0x14))));if(distance_s>stops[0x0])stopped[0x1]=!![],hideeverythingandshowevaluation();else{stopped[0x0]=!![];if(endstop==0x1)hideeverythingandshowevaluation();else{}}setTimeout(()=>{const _0x710487=_0x1a594d;vid[_0x710487(0x22b)]=speedcheckpoints[speedcheckpoints[_0x710487(0x1da)](_0x4fe26a)+0x1][0x0];},0x64);}}else document[_0x1a594d(0x218)](_0x1a594d(0x232))[_0x1a594d(0x1d5)]['backgroundColor']=_0x1a594d(0x226);}else document[_0x1a594d(0x218)](_0x1a594d(0x232))[_0x1a594d(0x1d5)][_0x1a594d(0x1f3)]='white',document[_0x1a594d(0x218)](_0x1a594d(0x232))[_0x1a594d(0x1df)]=_0x1a594d(0x1ea)+Math[_0x1a594d(0x224)](distance_to_next_change-distance_m)+_0x1a594d(0x1f0)+_0x4fe26a[0x2]+_0x1a594d(0x205);speed*baselinespeed>0x14+_0xad9e28[0x2]&&(stick=0x0,gameover=!![],console[_0x1a594d(0x231)](_0x1a594d(0x20b)),schalten());for(let _0xbcb853=0x0;_0xbcb853<gottastop['length'];_0xbcb853++){gottastop[_0xbcb853]&&(!stopped[_0xbcb853]&&distance_s>stops[_0xbcb853])&&(stick=0x0,gameover=!![],console[_0x1a594d(0x231)](_0x1a594d(0x1f4)),schalten());}Math['round'](speed*baselinespeed)>_0xad9e28[0x2]?(document[_0x1a594d(0x218)](_0x1a594d(0x213))[_0x1a594d(0x1d5)][_0x1a594d(0x1f1)]=_0x1a594d(0x1dc),overspeedlimit=Math[_0x1a594d(0x21e)](overspeedlimit,Math[_0x1a594d(0x1e2)](speed*baselinespeed-_0xad9e28[0x2]))):document[_0x1a594d(0x218)](_0x1a594d(0x213))[_0x1a594d(0x1d5)][_0x1a594d(0x1f1)]='#fff',gameover&&(isMobile?document[_0x1a594d(0x218)](_0x1a594d(0x232))[_0x1a594d(0x1df)]='GAME\x20OVER\x20-\x20double\x20tap\x20the\x20screen\x20to\x20return':document[_0x1a594d(0x218)](_0x1a594d(0x232))[_0x1a594d(0x1df)]=_0x1a594d(0x1e6)),document['getElementById'](_0x1a594d(0x22c))[_0x1a594d(0x1df)]=_0xad9e28[0x2]+_0x1a594d(0x205),currentmaxspeed=_0xad9e28[0x2];}document[_0x414aec(0x218)](_0x414aec(0x22f))[_0x414aec(0x1d5)][_0x414aec(0x22d)]=_0x414aec(0x1db);let timescore=countdown,apple_s=0x0;function set_game(_0x36028c=0x0,_0x25ef60=0x2,_0x4008c9=0x5){const _0x5a5514=_0x414aec;vid['autoplay']=!![],document[_0x5a5514(0x218)](_0x5a5514(0x1fc))['style'][_0x5a5514(0x22d)]=_0x5a5514(0x1db),document[_0x5a5514(0x218)](_0x5a5514(0x22f))[_0x5a5514(0x1d5)][_0x5a5514(0x22d)]=_0x5a5514(0x1f7),startstop=Math[_0x5a5514(0x202)](_0x36028c,0x1),startstop=Math[_0x5a5514(0x21e)](startstop,0x0),endstop=Math['max'](_0x25ef60,startstop+0x1),endstop=Math[_0x5a5514(0x202)](endstop,0x2);if(startstop==0x0)vid[_0x5a5514(0x22b)]=0xa;else startstop==0x1&&(vid[_0x5a5514(0x22b)]=0x128,gottastop[0x0]=![]);_0x25ef60==0x1&&(gottastop[0x1]=![]),timescore+=_0x4008c9*0x3c,interval=setInterval(getDistance,msperloop),then=Date[_0x5a5514(0x219)](),energy_used=0x0;}function set_sg_game(_0x5e35e0=0x2){const _0xde0748=_0x414aec;vid[_0xde0748(0x1e9)]=_0xde0748(0x203),vid[_0xde0748(0x1e9)]=_0xde0748(0x1d4),vid[_0xde0748(0x230)]=!![],document[_0xde0748(0x218)](_0xde0748(0x1fc))[_0xde0748(0x1d5)][_0xde0748(0x22d)]='none',document[_0xde0748(0x218)](_0xde0748(0x22f))['style'][_0xde0748(0x22d)]='block',endstop=0x1,vid['currentTime']=0x0,gottastop[0x0]=!![],timescore+=_0x5e35e0*0x3c,interval=setInterval(getDistance,msperloop),then=Date[_0xde0748(0x219)](),energy_used=0x0,speedcheckpoints=[],speedcheckpoints[_0xde0748(0x1f8)]([0x0,1.1,0x82,0x28b]),speedcheckpoints[_0xde0748(0x1f8)]([0x14,1.14,0x8c,0x28a]),speedcheckpoints[_0xde0748(0x1f8)]([0x42,1.2,0x0,0x28e]);}function hideeverythingandshowevaluation(){const _0x3b7898=_0x414aec;document['getElementById']('traindriving')['style'][_0x3b7898(0x22d)]=_0x3b7898(0x1db),clearInterval(interval);let _0x240f5b=0x64*(endstop-startstop);document[_0x3b7898(0x218)](_0x3b7898(0x1f9))[_0x3b7898(0x1df)]='Well\x20Done!\x20+'+_0x240f5b+_0x3b7898(0x1e4);let _0x15dcdb=Date[_0x3b7898(0x219)](),_0x34733d=Math[_0x3b7898(0x224)]((_0x15dcdb-then)/0x3e8);timescore-=_0x34733d,document[_0x3b7898(0x218)](_0x3b7898(0x204))['innerHTML']=_0x3b7898(0x222)+_0x34733d+'\x20seconds):\x20'+formatter[_0x3b7898(0x210)](timescore)+_0x3b7898(0x1e4),_0x240f5b+=timescore,document[_0x3b7898(0x218)](_0x3b7898(0x1ff))[_0x3b7898(0x1df)]=_0x3b7898(0x1e8)+overspeedlimit[_0x3b7898(0x20d)]()+_0x3b7898(0x21f)+Math[_0x3b7898(0x20e)](-(overspeedlimit**0x2)/0xa)[_0x3b7898(0x20d)]()+_0x3b7898(0x1e4),_0x240f5b-=Math[_0x3b7898(0x20e)](-(overspeedlimit**0x2)/0xa),seconds_with_emergeny_brake=Math[_0x3b7898(0x20e)](seconds_with_emergeny_brake),document[_0x3b7898(0x218)](_0x3b7898(0x1eb))[_0x3b7898(0x1df)]=_0x3b7898(0x220)+Math[_0x3b7898(0x20e)](energy_used/0x2710)+'\x20CHF',_0x240f5b-=Math[_0x3b7898(0x20e)](energy_used/0x2710),stopped_with_min>=0x2?(document[_0x3b7898(0x218)](_0x3b7898(0x212))['innerHTML']=_0x3b7898(0x209)+controlstrings[stopped_with_min]+'):\x20+20\x20CHF',_0x240f5b+=0x14):(document[_0x3b7898(0x218)]('loosenBrakesAtHalt')[_0x3b7898(0x1df)]=_0x3b7898(0x1f6)+controlstrings[stopped_with_min]+_0x3b7898(0x201)+(stopped_with_min-0x1)*0x14+_0x3b7898(0x1e4),_0x240f5b+=(stopped_with_min-0x1)*0x14),document['getElementById'](_0x3b7898(0x22a))[_0x3b7898(0x1df)]=_0x3b7898(0x21b)+maxdistancefromstop[_0x3b7898(0x20d)]()+_0x3b7898(0x200)+(0x14-maxdistancefromstop)[_0x3b7898(0x20d)]()+_0x3b7898(0x1e4),_0x240f5b+=0x14-maxdistancefromstop,document['getElementById'](_0x3b7898(0x1d8))[_0x3b7898(0x1df)]=_0x3b7898(0x20f)+Math[_0x3b7898(0x21e)](_0x240f5b,0x0)+'\x20CHF',isMobile?document[_0x3b7898(0x218)](_0x3b7898(0x1d8))['innerHTML']+=_0x3b7898(0x1d9):document[_0x3b7898(0x218)](_0x3b7898(0x1d8))['innerHTML']+=_0x3b7898(0x234),gameover=!![];}
+    if (isMobile){
+        document.getElementById("geardownbutton").style.width = "100%";
+        document.getElementById("gearupbutton").style.width = "100%";
+        document.getElementById("3").innerHTML = "Press Upper Half of Screen to accelerate and Lower Half to brake";
+    } else {
+         document.getElementById("geardownbutton").style.display = "None";
+        document.getElementById("gearupbutton").style.display = "None";
+    }
+
+let msperloop = 40
+if (isApple){
+
+    msperloop = 40;
+for (let classic in ["hb-altstetten", "oerlikon-hb", "oerlikon-altstetten"]){
+
+}
+}
+let speed = 0;
+let stick = 2;
+
+
+vid.playbackRate = 0;
+let gameover = false;
+let gameoverreason = "you were too fast";
+let controlstrings = ["EMERGENCY BRAKE", "B2", "B1", "N", "A1", "A2", "A3"];
+const formatter = new Intl.NumberFormat("en-GB", { style: "decimal",  signDisplay: 'always' });
+
+
+
+let then = Date.now();
+
+let seconds_with_emergeny_brake = 0;
+let stopped_with_min = 4;
+let overspeedlimit = 0;
+let maxdistancefromstop = 0;
+let energy_used = 0;
+
+
+let colors = [[255, 0, 0], [255, 255, 0], [255, 255, 0], [255, 255, 255], [100, 250, 100], [100, 250, 100], [100, 250, 100]];
+
+
+
+
+
+
+function schalten(){
+  for (let i = 0; i < 7; i++){
+    if (i == stick){
+      document.getElementById(i.toString()).style.backgroundColor = "rgb("+colors[i][0].toString()+","+colors[i][1].toString()+","+colors[i][2].toString()+")";
+      if (i > 3){
+          document.getElementById("2").innerHTML = "B1";
+      }
+      if (i >= 0){
+       document.getElementById(i.toString()).style.color = "black";
+      } else {
+        document.getElementById(i.toString()).style.color = "white";
+      }
+
+    } else {
+      document.getElementById(i.toString()).style.backgroundColor = null;
+      document.getElementById(i.toString()).style.color = "rgb("+colors[i][0].toString()+","+colors[i][1].toString()+","+colors[i][2].toString()+")";
+
+    }
+  }
+}
+
+
+schalten();
+
+
+  function KeyDownHandler(event) {
+            buttonHandler(event.key);
+            }
+
+
+function buttonHandler(key) {
+            if ((key == 'w') || (key == 'ArrowUp')){
+              stick = Math.min(stick + 1, 6);
+              if (!(vid_is_initialised)){
+              initialise_vid();
+              }
+            }
+            if ((key == 's') || (key == 'ArrowDown')){
+              stick = Math.max(stick - 1, 0);
+            }
+            if (gameover){
+              stick = 0
+                if (key == 'r'){
+                    location.reload();
+                }
+            }
+            schalten();
+            }
+
+
+   document.addEventListener('keydown', (e) => {
+            if (!e.repeat) {
+                KeyDownHandler(e);
+            }
+            });
+
+let distance_s = 0;
+let distance_m = 0;
+let distance_to_higher = 0;
+let distance_to_next_change = 0;
+
+
+
+
+
+let korrekturfaktor = 1;
+let baselinespeed = 115;
+let mpsbaseline = baselinespeed / 3.6;
+let currentmaxspeed = 0;
+
+speedcheckpoints = [];
+speedcheckpoints.push([0, 0.9, 80, 442]);
+speedcheckpoints.push([20, 0.9, 120, 442]);
+speedcheckpoints.push([200, 0.8, 80, 390]);
+speedcheckpoints.push([260, 0.0625, 0, 390]);
+speedcheckpoints.push([296, 0.0625, 80, 390]);
+speedcheckpoints.push([314, 0.125, 80, 390]);
+speedcheckpoints.push([340, 1, 120, 405]);
+speedcheckpoints.push([372, 1, 120, 424]);
+speedcheckpoints.push([374, 1, 120, 424]);
+speedcheckpoints.push([394, 1, 120, 402]);
+speedcheckpoints.push([440, 1, 120, 422]);
+speedcheckpoints.push([442, 1, 120, 422]);
+speedcheckpoints.push([456, 1, 120, 400]);
+speedcheckpoints.push([474, 1, 0, 399]);
+speedcheckpoints.push([480, 1, 130, 398]);
+
+
+
+
+
+let stopped = [false, false];
+let gottastop = [true, true];
+let stops = [260, 474];
+
+
+let lastClick = 0;
+if (isMobile) {
+document.addEventListener('touchstart', function(e) {
+  e.preventDefault();
+  let date = new Date();
+  let time = date.getTime();
+  const time_between_taps = 200;
+  if (time - lastClick < time_between_taps) {
+
+      if (gameover) {
+
+          buttonHandler('r');
+
+      }
+  }
+  lastClick = time;
+});
+
+
+
+    document.addEventListener('dbclick', (e) => {
+        if (gameover) {
+
+            buttonHandler('r');
+        }
+    });
+
+}
+
+
+function getDistance(){
+
+  distance_s = vid.currentTime;
+  distance_to_next_change = 0;
+  distance_m = 0;
+
+  let lower = speedcheckpoints[0];
+  let higher = speedcheckpoints[1];
+  let changepoint = speedcheckpoints[1];
+
+  for (let checkpoint of speedcheckpoints){
+    if ((distance_s >= checkpoint[0]) || (checkpoint[2] == currentmaxspeed)){
+      distance_to_next_change += (checkpoint[0] - lower[0]) * ((checkpoint[1] + lower[1]) / 2) * mpsbaseline;
+      lower = checkpoint;
+    } else {
+      distance_to_next_change += (checkpoint[0] - lower[0]) * ((checkpoint[1] + lower[1]) / 2) * mpsbaseline;
+      changepoint = checkpoint;
+      break;
+    }
+  }
+  distance_m = 0;
+  lower = speedcheckpoints[0];
+
+  let slope = 0;
+
+   for (let checkpoint of speedcheckpoints){
+    if (distance_s >= checkpoint[0]){
+      distance_m += (checkpoint[0] - lower[0]) * ((checkpoint[1] + lower[1]) / 2) * mpsbaseline;
+
+      distance_to_higher = distance_m;
+      lower = checkpoint;
+    } else {
+      distance_to_higher += (checkpoint[0] - lower[0]) * ((checkpoint[1] + lower[1]) / 2) * mpsbaseline;
+      slope =  (checkpoint[3] - lower[3]) / ((checkpoint[0] - lower[0]) * ((checkpoint[1] + lower[1]) / 2) * mpsbaseline);
+
+      higher = checkpoint;
+      break;
+    }
+  }
+  let weightHigher = (distance_s - lower[0]) / (higher[0] - lower[0]);
+  let relativespeed = (1 - weightHigher) * lower[1]  + weightHigher * higher[1];
+
+
+  distance_m += (distance_s - lower[0]) * ((relativespeed + lower[1]) / 2) * mpsbaseline;
+
+
+    if ((lower[1] == 0.0625) && (higher[1] == 0.0625)){
+    vid.currentTime =  higher[0];
+  }
+
+
+  let wasdriving = (speed > 0);
+  speed -= (speed**2) * 0.00042;
+  speed -= 0.00002;
+  speed -= (slope / (1 + slope**2)**0.5) * 9.81 * (msperloop / 1000) * (1 / mpsbaseline);
+  speed = Math.max(0, speed + (stick-3) * (0.48 * (1 / mpsbaseline) * (msperloop / 1000)))
+
+
+  if (stick == 0 || stick == 1){
+    energy_used -= (speed * mpsbaseline);
+  } else if (stick==2){
+    energy_used -= 0.5 * (speed * mpsbaseline);
+  } else {
+    energy_used += (stick - 3) * (speed * mpsbaseline);
+
+  }
+  if (wasdriving && (speed==0)){
+    stopped_with_min = Math.min(stopped_with_min, stick);
+  }
+
+
+  korrekturfaktor = 1 / relativespeed;
+
+
+
+
+
+    if (isApple){
+
+        if (!vid.paused){
+            vid.pause();
+        }
+        vid.currentTime = vid.currentTime + (msperloop/1000) * speed * korrekturfaktor;
+
+    } else {
+        vid.playbackRate = speed * korrekturfaktor;
+        vid.volume = Math.min(1, (vid.playbackRate)**2);
+    }
+
+
+  if ((speed * baselinespeed) < 1){
+    document.getElementById("tachometer").innerHTML = Math.ceil(speed * baselinespeed) + " km/h";
+  } else {
+    document.getElementById("tachometer").innerHTML = Math.round(speed * baselinespeed) + " km/h";
+  }
+
+
+  if (changepoint[2] == 0){
+    document.getElementById("meter").innerHTML = "In " + Math.floor(distance_to_next_change - (distance_m + 20)) + "m: STOP";
+    if ((distance_to_next_change - distance_m) < 40){
+      document.getElementById("meter").style.backgroundColor = "green";
+      if (speed == 0){
+        maxdistancefromstop = Math.max(maxdistancefromstop, Math.abs(Math.floor(distance_to_next_change - (distance_m + 20))));
+        if (distance_s > stops[0]){
+          stopped[1] = true;
+          hideeverythingandshowevaluation();
+        } else {
+          stopped[0] = true;
+          if (endstop == 1) {
+
+            hideeverythingandshowevaluation();
+          } else {
+
+          }
+        }
+        setTimeout(() => {  vid.currentTime =  speedcheckpoints[speedcheckpoints.indexOf(changepoint)+1][0]; }, 100);
+
+      }
+    } else {
+      document.getElementById("meter").style.backgroundColor = "white";
+    }
+  } else {
+    document.getElementById("meter").style.backgroundColor = "white";
+    document.getElementById("meter").innerHTML = "In " + Math.floor(distance_to_next_change - distance_m) + "m: " + changepoint[2] + " km/h";
+  }
+
+
+  if ((speed * baselinespeed) > 20 + lower[2]){
+    stick = 0;
+    gameover = true;
+    console.log("game over because too fast");
+    schalten();
+  }
+  for (let i = 0; i < gottastop.length; i++){
+    if (gottastop[i] && (!stopped[i] && distance_s > stops[i])){
+      stick = 0;
+      gameover = true;
+      console.log("game over because overrun");
+      schalten();
+    }
+  }
+  if (Math.round(speed * baselinespeed) > lower[2]){
+    document.getElementById("tachometer").style.color = '#ff0';
+    overspeedlimit = Math.max(overspeedlimit, Math.round(speed * baselinespeed - lower[2]));
+  } else {
+    document.getElementById("tachometer").style.color = '#fff';
+  }
+  if (gameover){
+      if (isMobile){
+          document.getElementById("meter").innerHTML = "GAME OVER - double tap the screen to return";
+
+      } else {
+          document.getElementById("meter").innerHTML = "GAME OVER - press R to reload";
+      }
+  }
+  document.getElementById("maxspeed").innerHTML = lower[2] + " km/h";
+  currentmaxspeed = lower[2];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById("traindriving").style.display = "none";
+
+let timescore = countdown;
+let apple_s = 0;
+
+function set_game(start=0, end=2, minutes=5){
+    vid.autoplay = true;
+  document.getElementById("classicselection").style.display = "none";
+  document.getElementById("traindriving").style.display = "block";
+
+  startstop = Math.min(start, 1);
+  startstop = Math.max(startstop, 0);
+  endstop = Math.max(end, startstop+1);
+  endstop = Math.min(endstop, 2);
+
+    if (startstop == 0){
+    vid.currentTime = 10;
+  } else if (startstop == 1){
+    vid.currentTime = 296;
+    gottastop[0] = false;
+  }
+  if (end==1){
+    gottastop[1] = false;
+  }
+
+  timescore += minutes * 60;
+  interval = setInterval(getDistance, msperloop);
+  then = Date.now();
+  energy_used = 0;
+
+}
+
+
+function set_sg_game(minutes=2){
+    vid.src = 'bruggen_winkeln.mp4';
+    vid.autoplay = true;
+  document.getElementById("classicselection").style.display = "none";
+  document.getElementById("traindriving").style.display = "block";
+  endstop = 1;
+  vid.currentTime = 0;
+  gottastop[0] = true;
+  timescore += minutes * 60;
+  interval = setInterval(getDistance, msperloop);
+  then = Date.now();
+  energy_used = 0;
+    speedcheckpoints = []
+speedcheckpoints.push([0, 1.1, 130, 651]);
+speedcheckpoints.push([20, 1.14, 140, 650]);
+speedcheckpoints.push([66, 1.2, 0, 654]);
+
+}
+
+function hideeverythingandshowevaluation(){
+  document.getElementById("traindriving").style.display = "none";
+  clearInterval(interval);
+  let score = 100 * (endstop - startstop);
+  document.getElementById("comment").innerHTML = "Well Done! +"+score+" CHF";
+
+  let now = Date.now();
+  let time_needed = Math.floor((now - then) / 1000);
+
+  timescore -= time_needed;
+  document.getElementById("timeNeeded").innerHTML = "Time ("+time_needed+" seconds): " + formatter.format(timescore) + " CHF";
+  score += timescore;
+  document.getElementById("overSpeedLimit").innerHTML = "Speeding (" + overspeedlimit.toString() + " km/h): " + Math.ceil(- (overspeedlimit**2)/10).toString() + " CHF";
+  score -= Math.ceil(- (overspeedlimit**2)/10)
+  seconds_with_emergeny_brake = Math.ceil(seconds_with_emergeny_brake);
+  
+  document.getElementById("emergency brakes").innerHTML = "Energy cost: -" + Math.ceil(energy_used / 10000) + " CHF";
+  score -= Math.ceil(energy_used / 10000);
+
+  if (stopped_with_min >= 2){
+    document.getElementById("loosenBrakesAtHalt").innerHTML = "Smooth Stop (with " + controlstrings[stopped_with_min] + "): +20 CHF" ;
+    score += 20;
+  } else {
+    document.getElementById("loosenBrakesAtHalt").innerHTML = "Hard Braking at Stop (with " + controlstrings[stopped_with_min] + "): " +(stopped_with_min - 1)*20+" CHF";
+    score += (stopped_with_min - 1) * 20;
+  }
+  document.getElementById("distance stop").innerHTML = "Stopping precision (" + maxdistancefromstop.toString() + "m): +" + (20 - maxdistancefromstop).toString() + " CHF";
+  score += (20 - maxdistancefromstop);
+  document.getElementById("totalScore").innerHTML = "Paycheck: " + Math.max(score, 0) + " CHF";
+  if (isMobile){
+      document.getElementById("totalScore").innerHTML += ". Double click the screen to return."
+  } else {
+      document.getElementById("totalScore").innerHTML += ". Press the 'R' key to return."
+  }
+  gameover = true;
+}
+
 </script>
 </html>
