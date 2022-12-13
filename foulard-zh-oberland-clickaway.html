@@ -220,7 +220,7 @@
       document.getElementById("pair"+matches.toString()).appendChild(document.getElementById(active_flag.toString()));
       document.getElementById("pair"+matches.toString()).appendChild(document.getElementById(active_name.toString()));
       matches += 1;
-      if (matches===1){
+      if (matches===9){
         let d = new Date();
         document.getElementById("winning_text").innerHTML = "Gut gemacht! " + d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+'.'+d.getMilliseconds();
       }
