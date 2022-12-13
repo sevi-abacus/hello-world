@@ -6,7 +6,7 @@
   <meta name="viewport" content="user-scalable=no">  <!-- width=device-width would make it too big on phone screen -->
 </head>
 <body style="background-color:#555">
-<h1 id="winning_text"></h1>
+<h1 id="winning_text" style="color:white">Klicke nacheinander auf Foulard und Abteilungsnamen die zusammengehören</h1>
 <div id="cards">
 <svg height="100" width="200" id="0">
   // left background
@@ -220,6 +220,10 @@
       document.getElementById("pair"+matches.toString()).appendChild(document.getElementById(active_flag.toString()));
       document.getElementById("pair"+matches.toString()).appendChild(document.getElementById(active_name.toString()));
       matches += 1;
+      if (matches===1){
+        let d = new Date();
+        document.getElementById("winning_text").innerHTML = "Gut gemacht! " + d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+'.'+d.getMilliseconds();
+      }
     }
     console.log(parseInt(id));
   }
