@@ -86,7 +86,7 @@ preselection, or define yourself (with other variables adapting automatically).
   // }
   vid_is_initialised = true;
   }
-  
+
   if (isMobile){
 
       // use big buttons
@@ -150,14 +150,13 @@ let currentmaxspeed = 0;
         document.getElementById("gearupbutton").style.display = "None";
     }
     // TODO: loading screen with random train fact
-let msperloop = 40 // 15;
-if (isApple){
-// msperloop = 2000;
-    msperloop = 40;
-for (let classic in ["hb-altstetten", "oerlikon-hb", "oerlikon-altstetten"]){
-    // document.getElementById(classic).innerHTML = document.getElementById(classic).innerHTML + " - Apple devices can't handle this level well";
-}
-}
+    if (isApple){
+        var before = Date.now();
+    } else {
+        msperloop = 40;
+    }
+
+
 let speed = 0;
 let stick = 2;  // B1
 
@@ -188,7 +187,6 @@ let colors = [[255, 0, 0], [255, 255, 0], [255, 255, 0], [255, 255, 255], [100, 
                             marker.setStyle({color: 'rgb(255, ' + marker.potential.toString() + ', ' +  marker.potential.toString()});
                         } else {
                             marker.setStyle({color: 'rgb(' + Math.floor(127 + marker.potential/2).toString() + ', ' + marker.potential.toString() + ', '+ marker.potential.toString() + ')'});
-
                         }
  */
 
@@ -319,7 +317,6 @@ for (let i = 1; i < speedcheckpoints.length; i++) {
     stops.push(distance_to_stop);
   }
 }
-
  */
 
       let lastClick = 0;
@@ -352,6 +349,11 @@ for (let i = 1; i < speedcheckpoints.length; i++) {
 
 
       function getDistance() {  // main loop
+          if (isApple){
+              let now = Date.now();
+              msperloop = now - before;  // TODO: should always be bigger than 1 or it will crash
+              before = now;
+          }
 
           distance_s = vid.currentTime;
           distance_to_next_change = 0;
@@ -403,8 +405,8 @@ for (let i = 1; i < speedcheckpoints.length; i++) {
 
           // TODO: was braucht welche einheiten  // TODO: fix energy used
           let wasdriving = (speed > 0);
-          speed -= (speed ** 2) * 0.00042; // luftwiderstand air resistance
-          speed -= 0.00002; // rollwiderstand rolling resistance
+          speed -= (speed ** 2) * 0.0003287 * mpsbaseline * (msperloop / 1000); // luftwiderstand air resistance
+          speed -= 0.001 * 9.81 * (msperloop / 1000) * (1 / mpsbaseline); // rollwiderstand rolling resistance
           // console.log(-(slope / (1 + slope**2)**0.5) * 9.81 * (msperloop / 1000) * (1 / mpsbaseline));
           speed -= (slope / (1 + slope ** 2) ** 0.5) * 9.81 * (msperloop / 1000) * (1 / mpsbaseline); // slope; since acceleration formula is in mps; convert by dividing and apply per second. what about baselinespeed??
           speed = Math.max(0, speed + (stick - 3) * (0.48 * (1 / mpsbaseline) * (msperloop / 1000))) // todo: how does acceleration behave with different speeds in a locomitive. what are the limitations?
@@ -428,7 +430,7 @@ for (let i = 1; i < speedcheckpoints.length; i++) {
               if (!vid.paused) {
                   vid.pause();
               }
-              vid.currentTime = vid.currentTime + (msperloop / 1000) * speed * korrekturfaktor;
+              vid.currentTime = vid.currentTime + (msperloop / 1000) * speed * korrekturfaktor;  // TODO: some browsers (like e.g. Chrome) will probably choose a slower rythm if they can't keep up
 
           } else {
               vid.playbackRate = speed * korrekturfaktor; // has to be always positive as of now
@@ -547,7 +549,12 @@ for (let i = 1; i < speedcheckpoints.length; i++) {
           }
 
           timescore += minutes * 60;
-          interval = setInterval(getDistance, msperloop);
+          if (isApple){
+              interval = setInterval(getDistance);
+          } else {
+              interval = setInterval(getDistance, msperloop);
+          }
+
           then = Date.now();
           energy_used = 0; // kWh
 
@@ -564,7 +571,11 @@ for (let i = 1; i < speedcheckpoints.length; i++) {
           vid.currentTime = 0;
           gottastop[0] = true;
           timescore += minutes * 60;
-          interval = setInterval(getDistance, msperloop);
+          if (isApple){
+              interval = setInterval(getDistance);
+          } else {
+              interval = setInterval(getDistance, msperloop);
+          }
           then = Date.now();
           energy_used = 0; // kWh
           speedcheckpoints = []  //
@@ -616,6 +627,6 @@ for (let i = 1; i < speedcheckpoints.length; i++) {
           }
           gameover = true;
       }
-    
+
 </script>
 </html>
