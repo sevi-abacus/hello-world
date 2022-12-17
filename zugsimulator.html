@@ -20,20 +20,33 @@
     padding: 5vh;
     margin: 2vh;
   }
+
 </style>
+
 
 </head>
 <body>
-<div id="train-selection"></div>  <div id="traindriving">
-   <video id="myVideo" width=100% autoplay playsinline muted>
-  <source src="https://railway-games.cyou/durchmesserlinie_compressed.mp4" type="video/mp4">
+<div id="train-selection"></div>  <!-- TODO: make everything with real physical constants,
+and learn from somewhere how motors accelerate and use energy at different speeds
+preselection, or define yourself (with other variables adapting automatically).
+ finally, we would need to give the big trains more money, since they also need more energy (or tell them amount of passengers and let them determine number of carts
+ (maybe randomness and maybe even depending on last performance with time and breaking and empty seats, or given scenarios) -->
+<div id="traindriving">
+<!-- for apple maybe (not working either): <video id="myVideo" width="100%" playsinline muted preload="None"> -->
+    <video id="myVideo" width=100% autoplay playsinline muted>
+  <!-- muted: <video id="myVideo" width=100% autoplay muted>  -->
+  <source src="https://railway-games.cyou/durchmesserlinie_compressed.mp4" type="video/mp4">  <!-- copyright des videos: https://www.youtube.com/user/TrainspotterVideos -->
+  Your browser does not support HTML video.
 </video>
+<!-- img id="screenshot" src="files/favicon.ico"  -->
 <script>
 
   let startstop = 0;
-  let endstop=2;
+  let endstop=2; // global variable
   let interval = NaN;
-  let countdown = 0;
+  let countdown = 0; // seconds
+
+  // TODO: make sound play higher when faster, not just faster (louder?)
   let isMobile = (navigator.userAgent.match(/Android/i) ||
   navigator.userAgent.match(/iPhone/i));
   let isiPhone = navigator.userAgent.match(/iPhone/i);
@@ -67,34 +80,39 @@
   function initialise_vid(){
       if (!isApple) {
           vid.play()
-        vid.muted = false;
+        vid.muted = false;  // video wouldn't generate sound in set time mode anyway
       }
 
-
+  // }
   vid_is_initialised = true;
   }
 
   if (isMobile){
+      document.getElementById("traindriving").style.userSelect="none";
+      // use big buttons
+      // if these things don't work, take a look at our friends who made the one i sent yannick
       console.log("This is probably a phone")
       vid.muted = true;
   }
   else {
-      console.log("This is probably not a phone")
+      console.log("This is probably NOT a phone")
   }
 
 </script>
 <h1 style="position:absolute;right:10%;top:10%;z-index:100;color:white;background-color:black" id="tachometer">0 km/h</h1>
 <h1 style="position:absolute;right:10%;bottom:50%;z-index:100;color:black;background-color:white" id="meter">0m</h1>
 <h1 style="position:absolute;right:10%;top:20%;z-index:100;color:white;background-color:red" id="maxspeed">0 km/h</h1>
+<!-- <h1 style="position:absolute;right:10%;bottom:10%;z-index:100;color:#004" id="state">N</h1> -->
     <button style="position:absolute;left:0%;bottom:2%;z-index:100;color:#fff;background-color:rgba(0,0,0,0.1); outline-color:#000;height:44%;margin-left:0;padding-left:0" onclick="buttonHandler('s')" id="geardownbutton">Gear Down</button>
 <h1 style="position:absolute;left:10%;bottom:10%;z-index:100;color:#f00" id="0">EMERGENCY BRAKE</h1>
 <h1 style="position:absolute;left:10%;bottom:20%;z-index:100;color:#ff0" id="1">B2</h1>
-<h1 style="position:absolute;left:10%;bottom:30%;z-index:100;color:#ff0" id="2">B1 - press W to accelerate and S to brake</h1>
+<h1 style="position:absolute;left:10%;bottom:30%;z-index:100;color:#ff0" id="2">B1</h1>
 <h1 style="position:absolute;left:10%;bottom:40%;z-index:100;color:#fff" id="3">N</h1>
 <h1 style="position:absolute;left:10%;bottom:50%;z-index:100;color:#6f6" id="4">A1</h1>
 <h1 style="position:absolute;left:10%;bottom:60%;z-index:100;color:#6f6" id="5">A2</h1>
 <h1 style="position:absolute;left:10%;bottom:70%;z-index:100;color:#6f6" id="6">A3</h1>
     <button style="position:absolute;left:0%;top:2%;z-index:100;color:#fff;background-color:rgba(0,0,0,0.1); outline-color:#000;height:44%;margin-left:0;padding-left:0" onclick="buttonHandler('w')" id="gearupbutton">Gear Up</button>
+    <!-- <h1 style='position:absolute; left:30%; top:40%;"' id="command"></h1> --> <!-- // todo: centre and add variable and background color. press w to acclereate. or should we put this were meters at? -->
 </div>
 
 <div id="classicselection">
@@ -114,22 +132,26 @@
 <h1 id="loosenBrakesAtHalt"></h1>
 <h1 id="distance stop"></h1>
 <h1 id="totalScore"></h1>
+<!-- </div>  -->
 </body>
 <script>
-
-let korrekturfaktor = 1;
-let baselinespeed = 115;
+    //let end = 269;  // 4:27, wo er circa 2% der geschwindigkeit hat. // TODO: wieso lädt es schneller wenn es hier ist?
+let korrekturfaktor = 1; // e.g. if 60 km/ instead of 120 km/h, it should be 2
+let baselinespeed = 115; // km/h
 let mpsbaseline = baselinespeed / 3.6;
 let currentmaxspeed = 0;
+let stick = 2;  // B1
 
     if (isMobile){
         document.getElementById("geardownbutton").style.width = "100%";
         document.getElementById("gearupbutton").style.width = "100%";
-        document.getElementById("2").innerHTML = "Tap Upper Half of Screen to accelerate and Lower Half to brake";
+          document.getElementById("2").innerHTML = "Tap Upper Half of Screen to Gear Up and Lower Half to Gear Down";
     } else {
+        document.getElementById("2").innerHTML = "Press W to Gear Up and S to Gear Down";
          document.getElementById("geardownbutton").style.display = "None";
         document.getElementById("gearupbutton").style.display = "None";
     }
+    // TODO: loading screen with random train fact
     if (isApple){
         var before = Date.now();
     } else {
@@ -138,9 +160,6 @@ let currentmaxspeed = 0;
 
 
 let speed = 0;
-let stick = 2;
-
-
 vid.playbackRate = 0;
 let gameover = false;
 let controlstrings = ["EMERGENCY BRAKE", "B2", "B1", "N", "A1", "A2", "A3"];
@@ -156,20 +175,45 @@ let overspeedlimit = 0;
 let maxdistancefromstop = 0;
 let energy_used = 0;
 
+// let colors = [#f00, #ff0, #ff0, #fff, #6f6, #6f6, #6f6];
 let colors = [[255, 0, 0], [255, 255, 0], [255, 255, 0], [255, 255, 255], [100, 250, 100], [100, 250, 100], [100, 250, 100]];
+// let fontcolors = [[255, 255, 255], [255, 255, 255], [255, 255, 255], [0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]];
+
+
+
+/*
+ if (!(marker.visited)){
+                            marker.setStyle({color: 'rgb(255, ' + marker.potential.toString() + ', ' +  marker.potential.toString()});
+                        } else {
+                            marker.setStyle({color: 'rgb(' + Math.floor(127 + marker.potential/2).toString() + ', ' + marker.potential.toString() + ', '+ marker.potential.toString() + ')'});
+                        }
+ */
 
 function schalten(){
   for (let i = 0; i < 7; i++){
     if (i == stick){
       document.getElementById(i.toString()).style.backgroundColor = "rgb("+colors[i][0].toString()+","+colors[i][1].toString()+","+colors[i][2].toString()+")";
       if (i > 3){
-          document.getElementById("2").innerHTML = "B1";
+          document.getElementById("3").innerHTML = "N";  // they now seem to understand the controls
       }
-      if (i >= 0){
+      if ((i == 3) && (document.getElementById("2").innerHTML.length > 2)){
+          if (isMobile){
+              document.getElementById("3").innerHTML = "Tap Upper Half again to accelerate";
+          } else {
+              document.getElementById("3").innerHTML = "Press W again to accelerate";
+          }
+          document.getElementById("2").innerHTML = "B1";  // they now seem to understand the controls
+      }
+      /*
+      if (i > 0){
+      */
        document.getElementById(i.toString()).style.color = "black";
+       /*
       } else {
         document.getElementById(i.toString()).style.color = "white";
       }
+      */
+
 
     } else {
       document.getElementById(i.toString()).style.backgroundColor = null;
@@ -179,11 +223,22 @@ function schalten(){
   }
 }
 
+// TODO: check that baselinespeed isn't hardcoding shit
+// TODO: ideally, we can put parameters in like power, air resistance factor
 schalten();
+
+let fastforwarding = false;
 
   function KeyDownHandler(event) {
       console.log(event.key);
+      console.log(typeof event.key);
+      if (fastforwarding && event.key in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) {
+          gameover = false; // hecker
+          speed = Math.min(speed, (20 / baselinespeed));
+          vid.currentTime = (event.key / 10) * vid.duration;
+      } else {
           buttonHandler(event.key);
+      }
   }
 
 
@@ -207,48 +262,84 @@ schalten();
       }
 
 
-      document.addEventListener('keydown', (e) => {
+      document.addEventListener('keydown', (e) => {   // NICE!
           if (!e.repeat) {
               KeyDownHandler(e);
           }
       });
 
       let distance_s = 0;
-      let distance_m = 0;
+      let distance_m = 0;  // since start
       let distance_to_higher = 0;
       let distance_to_next_change = 0;
 
+
+      // vid.currentTime = 260;  // TODO: delete and adapt video by estimating speed by a few fixed points by an algorithm (maybe we have it in our notes somewhere)
+// TODO: algorithmus adaptieren. lokaler faktor für verlangsamung des videos (je schneller es ist). linear (wenn man annimmt lineare beschleunigung).
+// TODO: gewisse stellen überspringen mit if function
+// TODO: photogrammetrisch erkennen? python library?
+// quelle durchmesserlinie video: TrainspotterVideos https://www.youtube.com/watch?v=t7XXJmFlbS8
+
 let beginningtodeccelerate = 180;
-      speedcheckpoints = []
-      speedcheckpoints.push([0, 0.9, 80, 442]);
-      speedcheckpoints.push([20, 0.9, 120, 442]);
+//let end = 269;  // 4:27, wo er circa 2% der geschwindigkeit hat. // TODO: wieso lädt es schneller wenn es hier ist?
+
+
+      speedcheckpoints = []  //
+      speedcheckpoints.push([0, 0.9, 80, 442]); // sekunde 0, im video hat der zug relative geschwindigkeit 0.9, ab diesem checkpoint darf man, in fahrtrichtung, 80 fahren, schienenoberkante 442 meter über meer (für schwerpunkt eines zuges etwa)
+      speedcheckpoints.push([20, 0.9, 120, 442]);  // ab diesem checkpoint darf man, in fahrtrichtung, 120 fahren
       speedcheckpoints.push([200, 0.8, 80, 390]);
       speedcheckpoints.push([260, 0.0625, 0, 390]);
       speedcheckpoints.push([296, 0.0625, 80, 390]);
-      speedcheckpoints.push([314, 0.125, 80, 390]);
-      speedcheckpoints.push([340, 1, 120, 405]);
-      speedcheckpoints.push([372, 1, 120, 424]);
-      speedcheckpoints.push([374, 1, 120, 424]);
-      speedcheckpoints.push([394, 1, 120, 402]);
-      speedcheckpoints.push([440, 1, 120, 422]);
-      speedcheckpoints.push([442, 1, 120, 422]);
-      speedcheckpoints.push([456, 1, 120, 400]);
-      speedcheckpoints.push([474, 1, 0, 399]);
-      speedcheckpoints.push([480, 1, 130, 398]);
+      speedcheckpoints.push([314, 0.125, 80, 390]);  // end of löwenstrasse
+      speedcheckpoints.push([340, 1, 120, 405]); // at 5:40 the speed is 120 km/h
+      speedcheckpoints.push([372, 1, 120, 424]); // kohlendreieckbrücke scheitel erreicht
+      speedcheckpoints.push([374, 1, 120, 424]); // kohlendreieckbrücke
+      speedcheckpoints.push([394, 1, 120, 402]); // zwischenbrücken
+      speedcheckpoints.push([440, 1, 120, 422]); // letzibrücke scheitel erreicht
+      speedcheckpoints.push([442, 1, 120, 422]); // letzibrücke
+      speedcheckpoints.push([456, 1, 120, 400]); // letzibrücke ende
+      speedcheckpoints.push([474, 1, 0, 399]);  // altstetten bahnhof
+      speedcheckpoints.push([480, 1, 130, 398]); // at 8:00 the speed is 130 km/h
+
+
+      /*
+speeditup = 2;
+if (speeditup != 1) {
+  for (let checkpoint of speedcheckpoints) {
+    checkpoint[1] = Math.max(0.0625, checkpoint[1] / speeditup);
+  }
+}
+*/
+
 
       let stopped = [false, false];
       let gottastop = [true, true];
       let stops = [260, 474];
 
+// wir halten. das ist ein bisschen ein problem für unser video. dieses zu editieren führt ebenfalls zu lücken.
+// TODO: wir machen also folgendes: innerhalb von 20 meter anhalten, dann wird teleportiert
+
+
+      /*
+let stops = [];
+let distance_to_stop = 0;
+for (let i = 1; i < speedcheckpoints.length; i++) {
+  distance_to_stop += (speedcheckpoints[i][0] - speedcheckpoints[i-1][0]) * ((speedcheckpoints[i][1] + speedcheckpoints[i-1][1]) / 2) * mpsbaseline;
+  if (speedcheckpoints[i][1] == 0.0625){
+    stops.push(distance_to_stop);
+  }
+}
+ */
+
       let lastClick = 0;
       if (isMobile) {
           document.addEventListener('touchstart', function(e) {
-              e.preventDefault();
+              e.preventDefault(); // to disable browser default zoom on double tap
               let date = new Date();
               let time = date.getTime();
-              const time_between_taps = 200;
+              const time_between_taps = 200; // 200ms
               if (time - lastClick < time_between_taps) {
-
+                  // do stuff
                   if (gameover) {
                       console.log("triggering buttonHandler('r')")
                       buttonHandler('r');
@@ -269,7 +360,7 @@ let beginningtodeccelerate = 180;
       }
 
 
-      function getDistance() {
+      function getDistance() {  // main loop
           if (isApple){
               let now = Date.now();
               msperloop = now - before;
@@ -286,7 +377,7 @@ let beginningtodeccelerate = 180;
 
           for (let checkpoint of speedcheckpoints){
               if ((distance_s >= checkpoint[0]) || (checkpoint[2] == currentmaxspeed)){
-                  distance_to_next_change += (checkpoint[0] - lower[0]) * ((checkpoint[1] + lower[1]) / 2) * mpsbaseline;
+                  distance_to_next_change += (checkpoint[0] - lower[0]) * ((checkpoint[1] + lower[1]) / 2) * mpsbaseline; // seconds times avg speed in m/s
                   lower = checkpoint;
               } else {
                   distance_to_next_change += (checkpoint[0] - lower[0]) * ((checkpoint[1] + lower[1]) / 2) * mpsbaseline;
@@ -301,45 +392,45 @@ let beginningtodeccelerate = 180;
 
           for (let checkpoint of speedcheckpoints) {
               if (distance_s >= checkpoint[0]) {
-                  distance_m += (checkpoint[0] - lower[0]) * ((checkpoint[1] + lower[1]) / 2) * mpsbaseline;
+                  distance_m += (checkpoint[0] - lower[0]) * ((checkpoint[1] + lower[1]) / 2) * mpsbaseline; // seconds times avg speed in m/s
 
                   distance_to_higher = distance_m;
                   lower = checkpoint;
               } else {
                   distance_to_higher += (checkpoint[0] - lower[0]) * ((checkpoint[1] + lower[1]) / 2) * mpsbaseline;
                   slope = (checkpoint[3] - lower[3]) / ((checkpoint[0] - lower[0]) * ((checkpoint[1] + lower[1]) / 2) * mpsbaseline);
-
+                  // console.log("slope: " + slope);  // shouldn't be more than 0.03 or we made some error
                   higher = checkpoint;
                   break;
               }
           }
           let weightHigher = (distance_s - lower[0]) / (higher[0] - lower[0]);
-          let relativespeed = (1 - weightHigher) * lower[1] + weightHigher * higher[1];
+          let relativespeed = (1 - weightHigher) * lower[1] + weightHigher * higher[1];  // linear acceleration over time
 
 
           distance_m += (distance_s - lower[0]) * ((relativespeed + lower[1]) / 2) * mpsbaseline;
 
 
-          if ((lower[1] == 0.0625) && (higher[1] == 0.0625)) {
-              vid.currentTime = higher[0];
+          if ((lower[1] == 0.0625) && (higher[1] == 0.0625)) { // if there is a stop in between, i guess we'd have to skip it in one way or another. this baselinespeed / 16 value is kind of arbitrary, but most browsers can't play faster than  16 that's why we chose it
+              vid.currentTime = higher[0]; //b Math.min(higher[0], vid.currentTime + relativespeed * playbackspeed * 20);  // 10 * fps, as browser's maximum is 16.
           }
 
-
+          // TODO: was braucht welche einheiten  // TODO: fix energy used
           let wasdriving = (speed > 0);
-          speed -= (speed ** 2) * 0.0003287 * mpsbaseline * (msperloop / 1000);
-          speed -= 0.001 * 9.81 * (msperloop / 1000) * (1 / mpsbaseline);
-
-          speed -= (slope / (1 + slope ** 2) ** 0.5) * 9.81 * (msperloop / 1000) * (1 / mpsbaseline);
-          speed = Math.max(0, speed + (stick - 3) * (0.48 * (1 / mpsbaseline) * (msperloop / 1000)))
-
-
-          if (stick == 0 || stick == 1) {
-              energy_used -= (speed * mpsbaseline);
+          speed -= (speed ** 2) * 0.0003287 * mpsbaseline * (msperloop / 1000); // luftwiderstand air resistance
+          speed -= 0.001 * 9.81 * (msperloop / 1000) * (1 / mpsbaseline); // rollwiderstand rolling resistance
+          // console.log(-(slope / (1 + slope**2)**0.5) * 9.81 * (msperloop / 1000) * (1 / mpsbaseline));
+          speed -= (slope / (1 + slope ** 2) ** 0.5) * 9.81 * (msperloop / 1000) * (1 / mpsbaseline); // slope; since acceleration formula is in mps; convert by dividing and apply per second. what about baselinespeed??
+          speed = Math.max(0, speed + (stick - 3) * (0.48 * (1 / mpsbaseline) * (msperloop / 1000))) // todo: how does acceleration behave with different speeds in a locomitive. what are the limitations?
+          // TODO: if apple, you can't play with speed 0. either drive slowly, or pause video.
+          // this is if motor gets less efficient: divide by / Math.max(1, Math.exp(speed)))); or somethign like that check
+          if (stick == 0 || stick == 1) {  // half the energy goes back, but emergency break doesn't add additional energy
+              energy_used -= (speed * mpsbaseline); // TODO: make everything with real physical units and import real locomotive specs
           } else if (stick == 2) {
               energy_used -= 0.5 * (speed * mpsbaseline);
           } else {
-              energy_used += (stick - 3) * (speed * mpsbaseline);
-
+              energy_used += (stick - 3) * (speed * mpsbaseline); // as for now, we have linear acceleration, and this is the energy input. some motor factor too? but the thing to the right doesn't make too much sense because
+              // Math.max(1, Math.exp(speed-1))); exp(0) = -inf and not 1. should maybe be exp(speed) directly idk
           }
           if (wasdriving && (speed == 0)) {
               stopped_with_min = Math.min(stopped_with_min, stick);
@@ -347,14 +438,14 @@ let beginningtodeccelerate = 180;
 
           korrekturfaktor = 1 / relativespeed;
           if (isApple) {
-
+              // when a OS is fast in setting time but slow in changing playbackRate
               if (!vid.paused) {
                   vid.pause();
               }
               vid.currentTime = vid.currentTime + (msperloop / 1000) * speed * korrekturfaktor;
 
           } else {
-              vid.playbackRate = speed * korrekturfaktor;
+              vid.playbackRate = speed * korrekturfaktor; // has to be always positive as of now
               vid.volume = Math.min(1, (vid.playbackRate) ** 2);
           }
 
@@ -370,12 +461,12 @@ let beginningtodeccelerate = 180;
               document.getElementById("meter").innerHTML = "In " + Math.floor(distance_to_next_change - (distance_m + 20)) + "m: STOP";
               if ((distance_to_next_change - distance_m) < 40) {
                   document.getElementById("meter").style.backgroundColor = "green";
-                  if (speed == 0) {
+                  if (speed == 0) { // we stopped at a stop
                       maxdistancefromstop = Math.max(maxdistancefromstop, Math.abs(Math.floor(distance_to_next_change - (distance_m + 20))));
-                      if (distance_s > stops[0]) {
+                      if (distance_s > stops[0]) {  // the second stop
                           stopped[1] = true;
                           hideeverythingandshowevaluation();
-                      } else {
+                      } else {  // the first stop
                           stopped[0] = true;
                           if (endstop == 1) {
                               console.log("finished!");
@@ -387,7 +478,7 @@ let beginningtodeccelerate = 180;
                       }
                       setTimeout(() => {
                           vid.currentTime = speedcheckpoints[speedcheckpoints.indexOf(changepoint) + 1][0];
-                      }, 100);
+                      }, 100); // TODO: play stopping sound from video, and only continue once its played
 
                   }
               } else {
@@ -399,14 +490,14 @@ let beginningtodeccelerate = 180;
           }
 
 
-          if ((speed * baselinespeed) > 20 + lower[2]) {
+          if ((speed * baselinespeed) > 20 + lower[2]) {  // 20
               stick = 0;
               gameover = true;
               console.log("game over because too fast");
               schalten();
           }
           for (let i = 0; i < gottastop.length; i++) {
-              if (gottastop[i] && (!stopped[i] && distance_s > stops[i])) {
+              if (gottastop[i] && (!stopped[i] && distance_s > stops[i])) {  // too far
                   stick = 0;
                   gameover = true;
                   console.log("game over because overrun");
@@ -432,24 +523,34 @@ let beginningtodeccelerate = 180;
       }
 
 
+
+// todo: fade
+// TODO: delete part of the video (but that makes it more cumbersome to create new simulators)
+// TODO: make performance worse for higher speeds (physics) and lower air resistance
+
+// for this, we would have to integrate over the whole thing.
+
+// TODO: one option is to fade AFTER the train stopped, directly to the point where we wanna start.
+
+
       document.getElementById("traindriving").style.display = "none";
 
       let timescore = countdown;
 
-      function set_game(start = 0, end = 2, minutes = 5) {
+      function set_game(start = 0, end = 2, minutes = 5) { // TODO: only start main loop and show things once this is called in mainpage.html
           vid.autoplay = true;
           document.getElementById("classicselection").style.display = "none";
           document.getElementById("traindriving").style.display = "block";
-
+          // document.getElementById("command").innerHTML = "Departure in " + countdown + "seconds. Press 'w' to shift up."; TODO
           startstop = Math.min(start, 1);
           startstop = Math.max(startstop, 0);
-          endstop = Math.max(end, startstop + 1);
-          endstop = Math.min(endstop, 2);
+          endstop = Math.max(end, startstop + 1);  // at least start + 1
+          endstop = Math.min(endstop, 2); // at most 2
 
           if (startstop == 0) {
-              vid.currentTime = 10;
+              vid.currentTime = 10;  // 10  ; 247 to debug
           } else if (startstop == 1) {
-              vid.currentTime = 296;
+              vid.currentTime = 296;  // 296, 380 to debug
               gottastop[0] = false;
           }
           if (end == 1) {
@@ -464,11 +565,13 @@ let beginningtodeccelerate = 180;
           }
 
           then = Date.now();
-          energy_used = 0;
+          energy_used = 0; // kWh
 
       }
 
-      function set_sg_game(minutes = 2) {
+
+      function set_sg_game(minutes = 2) { // TODO: only start main loop and show things once this is called in mainpage.html
+          vid.src = 'bruggen_winkeln.mp4';
           vid.src = 'https://railway-games.cyou/bruggen_winkeln.mp4';
           vid.autoplay = true;
           document.getElementById("classicselection").style.display = "none";
@@ -483,10 +586,10 @@ let beginningtodeccelerate = 180;
               interval = setInterval(getDistance, msperloop);
           }
           then = Date.now();
-          energy_used = 0;
-          speedcheckpoints = []
-          speedcheckpoints.push([0, 1.1, 130, 651]);
-          speedcheckpoints.push([20, 1.14, 140, 650]);
+          energy_used = 0; // kWh
+          speedcheckpoints = []  //
+          speedcheckpoints.push([0, 1.1, 130, 651]); // sekunde 0, schienenoberkante bahnhof bruggen 651 meter über meer
+          speedcheckpoints.push([20, 1.14, 140, 650]);  // ab diesem checkpoint darf man, in fahrtrichtung, 120 fahren
           speedcheckpoints.push([66, 1.2, 0, 654]);
 
       }
@@ -500,7 +603,7 @@ let beginningtodeccelerate = 180;
 
           let now = Date.now();
           let time_needed = Math.floor((now - then) / 1000);
-
+          // timescore -= time_needed;
           timescore -= time_needed;
           document.getElementById("timeNeeded").innerHTML = "Time (" + time_needed + " seconds): " + formatter.format(timescore) + " CHF";
           score += timescore;
@@ -508,7 +611,10 @@ let beginningtodeccelerate = 180;
           score -= Math.ceil(-(overspeedlimit ** 2) / 10)
           console.log(overspeedlimit);
           seconds_with_emergeny_brake = Math.ceil(seconds_with_emergeny_brake);
-
+          /*
+  document.getElementById("emergency brakes").innerHTML = "Emergency Brake Usage (" + seconds_with_emergeny_brake + " seconds): " + (- 5 * seconds_with_emergeny_brake) + " CHF";
+  score -= 5 * seconds_with_emergeny_brake;  // delete and replace with energy usage?
+  */
           document.getElementById("emergency brakes").innerHTML = "Energy cost: -" + Math.ceil(energy_used / 10000) + " CHF";
           score -= Math.ceil(energy_used / 10000);
 
