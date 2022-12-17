@@ -89,6 +89,11 @@ preselection, or define yourself (with other variables adapting automatically).
 
   if (isMobile){
       document.getElementById("traindriving").style.userSelect="none";
+      document.getElementById("traindriving").style.webkitUserSelect="none"; /* Safari */
+      document.getElementById("traindriving").style.msUserSelect="none";
+      document.style.userSelect="none";
+      document.style.webkitUserSelect="none"; /* Safari */
+      document.style.msUserSelect="none";
       // use big buttons
       // if these things don't work, take a look at our friends who made the one i sent yannick
       console.log("This is probably a phone")
