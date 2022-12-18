@@ -97,7 +97,7 @@
 
 
 
-    const forcefrombeginning = true;
+    const forcefrombeginning = false;
     if ((localStorage.hasOwnProperty("money")) && !forcefrombeginning){  // load money and everything else
         money = parseInt(localStorage.getItem("money"));
         half_fare_expiry = localStorage.getItem("half_fare_expiry");
